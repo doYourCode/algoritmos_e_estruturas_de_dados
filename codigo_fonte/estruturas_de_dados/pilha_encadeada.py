@@ -1,14 +1,14 @@
 """ Exemplo de estrutura de pilha, usando encadeamento, e alguns algoritmos relacionados.
 
-Esse tipo de implementação facilita a alocação dinâmica e "evita" o transbordamento de pilha,
-porém requer mais operações de alocação e também mais memória. É util para quando desconhecemos o
-tamanho potencial da pilha.
+Esse tipo de implementação de pilha funcionará como as demais pilhas, porém objetiva facilitar a alocação
+dinâmica de novos elementos e "evitar" o transbordamento de pilha, porém requer mais operações de alocação
+e também mais memória. É util para quando desconhecemos o tamanho potencial da pilha.
 """
 __author__ = "Caio Henriques Sica Lamas"
 __date__ = "17/08/2022"
-__credits__ = ["https://www.tutorialspoint.com/python_data_structure/python_linked_lists.htm",
-               "https://towardsdatascience.com/python-linked-lists-c3622205da81",
-               "https://www.geeksforgeeks.org/linked-list-set-3-deleting-node/"]
+__credits__ = ["https://www.ime.usp.br/~rt/mac57102012/RT555pilhalink555.pdf",
+               "https://www.ufsm.br/pet/sistemas-de-informacao/2020/04/01/entendendo-listas-pilhas-e-filas/",
+               "https://www.geeksforgeeks.org/implement-a-stack-using-singly-linked-list/"]
 __license__ = "GPL"
 __email__ = "caio.lamas@ifnmg.edu,br"
 
@@ -60,4 +60,4 @@ class PilhaEncadeada:
 
 
 def pilha_encadeada():
-    pass # TODO -> implementar os testes das operações
+    pass  # TODO -> implementar os testes das operações

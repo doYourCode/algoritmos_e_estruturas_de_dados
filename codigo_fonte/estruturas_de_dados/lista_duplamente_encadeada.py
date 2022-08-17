@@ -1,10 +1,13 @@
 """ Exemplo de estrutura de lista duplamente encadeada e alguns algoritmos relacionados
+
+Uma lista duplamente encadeada se comportará como uma lista, com a exceção de que poderá ser transcorrida
+em dois sentidos, pois, em seus nodos, guarda referências para os próximos elementos, assim como os anteriores.
 """
 __author__ = "Caio Henriques Sica Lamas"
 __date__ = "16/08/2022"
-__credits__ = ["https://www.tutorialspoint.com/python_data_structure/python_linked_lists.htm",
-               "https://towardsdatascience.com/python-linked-lists-c3622205da81",
-               "https://www.geeksforgeeks.org/linked-list-set-3-deleting-node/"]
+__credits__ = ["https://www.tutorialspoint.com/python_data_structure/python_advanced_linked_list.htm",
+               "https://www.geeksforgeeks.org/doubly-linked-list/",
+               "https://www.programiz.com/dsa/doubly-linked-list"]
 __license__ = "GPL"
 __email__ = "caio.lamas@ifnmg.edu,br"
 
