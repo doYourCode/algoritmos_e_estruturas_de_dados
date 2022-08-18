@@ -37,19 +37,13 @@ class PilhaEncadeada:
     def valores(self):
         pass  # TODO
 
-    def add_inicio(self, valor):
+    def add_topo(self, valor):
         pass  # TODO
+      
+    def peek(self):
+        pass
 
-    def add_final(self, valor):
-        pass  # TODO
-
-    def add_pos(self, pos_nodo, valor):
-        pass  # TODO
-
-    def remove(self, valor):
-        pass  # TODO
-
-    def busca(self, valor):
+    def remove(self):
         pass  # TODO
 
     def __iter__(self):
