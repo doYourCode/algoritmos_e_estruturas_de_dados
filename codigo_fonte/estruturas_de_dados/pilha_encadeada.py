@@ -30,28 +30,86 @@ class PilhaEncadeada:
     """
 
     def __init__(self):
-        self.cabeca = None
+        self.topo = None
         self._tamanho = 0
 
     @property
     def valores(self):
-        pass  # TODO
+        """ Conjunto de nós """
+        return [nodo.valor for nodo in self]
 
     def add_topo(self, valor):
-        pass  # TODO
+        """ Adiciona um novo nó ao topo da pilha """
+        novo_nodo_topo = Nodo(valor)
+        novo_nodo_topo.anterior = self.topo
+        self.topo = novo_nodo_topo
+        self._tamanho += 1
       
     def peek(self):
-        pass
+        """ Retorna (Sem remover) o valor do topo da pilha"""
+        nodo_topo = self.topo
+        return nodo_topo.valor
 
     def remove(self):
-        pass  # TODO
+        """ Remove o elemento do topo da pilha """
+        if self.topo is None:
+            print(f"{FAIL}Não há nenhum elemento na pilha!{ENDC}")
+            return
+
+        nodo_topo = self.topo
+        valor = nodo_topo.valor
+        self.topo = nodo_topo.anterior
+        self._tamanho -= 1
+
+        return valor
 
     def __iter__(self):
-        pass  # TODO
+        nodo_topo = self.topo
+        while nodo_topo:
+            yield nodo_topo
+            nodo_topo = nodo_topo.anterior
 
     def __len__(self):
-        pass  # TODO
+        return self._tamanho
 
 
 def pilha_encadeada():
-    pass  # TODO -> implementar os testes das operações
+    pilhaTeste = PilhaEncadeada()  # Iniciando a Pilha sem valor algum.
+
+    # Teste de inserção
+    pilhaTeste.add_topo(5)
+    pilhaTeste.add_topo(7)
+    pilhaTeste.add_topo(1)
+    print(f'{HEADER} Teste Nº 1 (Inserções): {ENDC}')
+    print(f'{str(pilhaTeste.valores)} {OKBLUE} Tamanho da Pilha: {str(len(pilhaTeste))}{ENDC}\n')
+
+    # Teste de Remoção
+    print(f'{HEADER} Teste Nº 2 (Remoção): {ENDC}')
+    pilhaTeste.remove()
+    print(f'{str(pilhaTeste.valores)} {OKBLUE} Tamanho da Pilha: {str(len(pilhaTeste))}{ENDC}')
+    pilhaTeste.remove()
+    print(f'{str(pilhaTeste.valores)} {OKBLUE} Tamanho da Pilha: {str(len(pilhaTeste))}{ENDC}')
+    pilhaTeste.remove()  # Os três dados foram removidos, o próximo deve retornar uma mensagem
+    print(f'{str(pilhaTeste.valores)} {OKBLUE} Tamanho da Pilha: {str(len(pilhaTeste))}{ENDC}')
+    pilhaTeste.remove()
+    print(f'{str(pilhaTeste.valores)} {OKBLUE} Tamanho da Pilha: {str(len(pilhaTeste))}{ENDC}\n')
+
+    # Teste de retorno
+    print(f'{HEADER} Teste Nº 3 (Peek): {ENDC}')
+    pilhaTeste.add_topo(7)
+    pilhaTeste.add_topo(3)
+    pilhaTeste.add_topo(9)
+    print(f'Elemento do topo: {str(pilhaTeste.peek())}')
+    print(f'{str(pilhaTeste.valores)} {OKBLUE} Tamanho da Pilha: {str(len(pilhaTeste))}{ENDC}\n')
+
+    # Teste de erro -- Sò há um erro que pode ocorrer: Tentar deletar um topo de uma pilha vazia
+    print(f'{HEADER} Teste Nº 4 (Erro): {ENDC}')
+    pilhaTeste.remove()
+    pilhaTeste.remove()
+    pilhaTeste.remove()
+    pilhaTeste.remove()
+    # Removi 4x pois havia criado 3 no teste anterior.
+
+    print(f'{str(pilhaTeste.valores)} {OKBLUE} Tamanho da Pilha: {str(len(pilhaTeste))}{ENDC}')
+
+
