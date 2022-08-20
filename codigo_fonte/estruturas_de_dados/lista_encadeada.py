@@ -42,14 +42,14 @@ class ListaEncadeada:
         """ Conjunto dos nós. """
         return [nodo.valor for nodo in self]
 
-    def add_inicio(self, valor):
+    def adicionar_inicio(self, valor):
         """ Adiciona um novo nó no início da lista. """
         novo_nodo = Nodo(valor)
         novo_nodo.proximo = self.cabeca
         self.cabeca = novo_nodo
         self._tamanho += 1
 
-    def add_final(self, valor):
+    def adicionar_final(self, valor):
         """ Adiciona um novo nó ao final da lista. """
         novo_nodo = Nodo(valor)
         if self.cabeca is None:
@@ -62,9 +62,9 @@ class ListaEncadeada:
         ultimo.proximo = novo_nodo
         self._tamanho += 1
 
-    def add_pos(self, pos_nodo, valor):
+    def adicionar_pos(self, pos_nodo, valor):
         """ Adiciona um novo nó em uma posição posterior à outro nó específico. """
-        nodo_temp = self.busca(pos_nodo)
+        nodo_temp = self.buscar(pos_nodo)
         if nodo_temp is None:
             print(FAIL + "ATENÇÃO!" + ENDC + " Nó '" + pos_nodo + "' não foi encontrado! Inserção não ocorreu.")
             return
@@ -73,7 +73,7 @@ class ListaEncadeada:
         nodo_temp.proximo = novo_nodo
         self._tamanho += 1
 
-    def remove(self, valor):
+    def remover(self, valor):
         """ Remove um nó específico. """
         nodo_temp = self.cabeca
         nodo_anterior = None
@@ -92,7 +92,7 @@ class ListaEncadeada:
             nodo_anterior.proximo = nodo_temp.proximo
             self._tamanho -= 1
 
-    def busca(self, valor):
+    def buscar(self, valor):
         """ Busca um nó especificado. """
         for nodo in self:
             if nodo.valor == valor:
@@ -112,30 +112,30 @@ class ListaEncadeada:
 def lista_encadeada():
     lista = ListaEncadeada()  # ........................Instancia uma nova lista (em branco)
     # Testando inserção
-    lista.add_inicio("Segunda")  # .....................Insere um primeiro elemento
-    lista.add_final("Terça")  # ........................Insere 2 elementos ao final da lista
-    lista.add_final("Sexta")  #
-    lista.add_pos("Terça", "Quarta")  # ...Insere 2 elementos após outros 2 elementos específicos (busca)
-    lista.add_pos("Quarta", "Quinta")  # ..PS. Seria possível ter inserido a quarta e depois a terça?
-    lista.add_final("Sábado")  # .......................Insere elemento ao final da lista
-    lista.add_inicio("Domingo")  # .....................Insere elemento no início da lista
-    print(HEADER + "Teste nº 1 (Inserções): " + ENDC)
-    print(str(lista.valores) + OKBLUE + " Tamanho da lista: " + str(len(lista)) + ENDC)
+    lista.adicionar_inicio("Segunda")  # .....................Insere um primeiro elemento
+    lista.adicionar_final("Terça")  # ........................Insere 2 elementos ao final da lista
+    lista.adicionar_final("Sexta")  #
+    lista.adicionar_pos("Terça", "Quarta")  # ...Insere 2 elementos após outros 2 elementos específicos (busca)
+    lista.adicionar_pos("Quarta", "Quinta")  # ..PS. Seria possível ter inserido a quarta e depois a terça?
+    lista.adicionar_final("Sábado")  # .......................Insere elemento ao final da lista
+    lista.adicionar_inicio("Domingo")  # .....................Insere elemento no início da lista
+    print(f"{HEADER} Teste nº 1 (Inserções):  {ENDC}")
+    print(f"{str(lista.valores)} {OKBLUE} +  Tamanho da lista: {str(len(lista))} {ENDC}")
 
     # Testando a remoção
-    lista.add_inicio("Dia de são nunca")  # ............Insere 3 nós que não deveriam existir
-    lista.add_final("Dia de São Luguinho")
-    lista.add_pos("Quinta", "Dia do João Gomes")
-    print(HEADER + "Teste nº 2 (Inserções equivocadas): " + ENDC)
-    print(str(lista.valores) + OKBLUE + " Tamanho da lista: " + str(len(lista)) + ENDC)
-    lista.remove("Dia de são nunca")  # ................Remove os 3 nós que não deveriam existir
-    lista.remove("Dia de São Luguinho")
-    lista.remove("Dia do João Gomes")
-    print(HEADER + "Teste nº 3 (Remoções): " + ENDC)
-    print(str(lista.valores) + OKBLUE + " Tamanho da lista: " + str(len(lista)) + ENDC)
+    lista.adicionar_inicio("Dia de são nunca")  # ............Insere 3 nós que não deveriam existir
+    lista.adicionar_final("Dia de São Luguinho")
+    lista.adicionar_pos("Quinta", "Dia do João Gomes")
+    print(f"{HEADER} Teste nº 2 (Inserções equivocadas):  {ENDC}")
+    print(f"{str(lista.valores)} {OKBLUE} +  Tamanho da lista: {str(len(lista))} {ENDC}")
+    lista.remover("Dia de são nunca")  # ................Remove os 3 nós que não deveriam existir
+    lista.remover("Dia de São Luguinho")
+    lista.remover("Dia do João Gomes")
+    print(f"{HEADER} Teste nº 3 (Remoções):  {ENDC}")
+    print(f"{str(lista.valores)} {OKBLUE} +  Tamanho da lista: {str(len(lista))} {ENDC}")
 
     # Testando os erros
-    print(HEADER + "Teste nº 4 (Erros): " + ENDC)
-    lista.remove("Outro dia")  # ............................Tenta remover um nó que não existe
-    lista.add_pos("Dia do trabalhador", "Oitavo dia")  # ... Tenta adicionar um nó em local que não existe
-    print(str(lista.valores) + OKBLUE + " Tamanho da lista: " + str(len(lista)) + ENDC)
+    print(f"{HEADER} Teste nº 4 (Erros):  {ENDC}")
+    lista.remover("Outro dia")  # ............................Tenta remover um nó que não existe
+    lista.adicionar_pos("Dia do trabalhador", "Oitavo dia")  # ... Tenta adicionar um nó em local que não existe
+    print(f"{str(lista.valores)} {OKBLUE} +  Tamanho da lista: {str(len(lista))} {ENDC}")

@@ -39,7 +39,7 @@ class ListaEncadeada:
         """ Conjunto dos nós. """
         return [nodo.valor for nodo in self]
 
-    def add_inicio(self, valor):
+    def adicionar_inicio(self, valor):
         """ Adiciona um novo nó no início da lista. """
         novo_nodo = Nodo(valor)
         novo_nodo.proximo = self.cabeca
@@ -48,7 +48,7 @@ class ListaEncadeada:
         self.cabeca = novo_nodo
         self._tamanho += 1
 
-    def add_final(self, valor):
+    def adicionar_final(self, valor):
         """ Adiciona um novo nó ao final da lista. """
         novo_nodo = Nodo(valor)
         novo_nodo.proximo = None
@@ -64,9 +64,9 @@ class ListaEncadeada:
         novo_nodo.anterior = ultimo
         self._tamanho += 1
 
-    def add_pos(self, pos_nodo_n, valor):
+    def adicionar_pos(self, pos_nodo_n, valor):
         """ Adiciona um novo nó em uma posição posterior à outro nó específico. """
-        pos_nodo = self.busca(pos_nodo_n)
+        pos_nodo = self.buscar(pos_nodo_n)
         if pos_nodo is None:
             self._tamanho += 1
             return
@@ -78,7 +78,7 @@ class ListaEncadeada:
             novo_nodo.proximo.anterior = novo_nodo
         self._tamanho += 1
 
-    def busca(self, valor):
+    def buscar(self, valor):
         """ Busca um nó especificado. """
         for nodo in self:
             if nodo.valor == valor:
@@ -98,10 +98,12 @@ class ListaEncadeada:
 def lista_duplamente_encadeada():
     lista = ListaEncadeada()  # ........................Instancia uma nova lista (em branco)
     # Testando inserção
-    lista.add_inicio("Segunda")  # .....................Insere um primeiro elemento
-    lista.add_final("Quarta")  # ........................Insere 2 elementos ao final da lista
-    lista.add_final("Sexta")
-    lista.add_pos("Segunda", "Terça")
-    lista.add_pos("Quarta", "Quinta")
-    print(HEADER + "Teste nº 1 (Inserções): " + ENDC)
-    print(str(lista.valores) + OKBLUE + " Tamanho da lista: " + str(len(lista)) + ENDC)
+    lista.adicionar_inicio("Segunda")  # .....................Insere um primeiro elemento
+    lista.adicionar_final("Quarta")  # ........................Insere 2 elementos ao final da lista
+    lista.adicionar_final("Sexta")
+    lista.adicionar_pos("Segunda", "Terça")
+    lista.adicionar_pos("Quarta", "Quinta")
+    print(f"{HEADER} Teste nº 1 (Inserções):  {ENDC}")
+    print(f"{str(lista.valores)} {OKBLUE} +  Tamanho da lista: {str(len(lista))} {ENDC}")
+
+    # TODO outros testes
