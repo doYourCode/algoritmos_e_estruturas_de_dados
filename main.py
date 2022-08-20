@@ -11,4 +11,4 @@ from codigo_fonte.utilidades.imports import *
 
 if __name__ == '__main__':
 
-    executar(lista_encadeada)
+    executar(pilha_encadeada)
