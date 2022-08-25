@@ -1,3 +1,4 @@
+
 """
 Tabela hash na estrutura de dados, Tabela Hash é a tabela que armazena
 todos os valores do código hash usado ao armazenar as chaves e valores de
@@ -94,3 +95,4 @@ def tabela_hash():
     # Esse teste prova que mesmo com um número primo na capacidade
     # ainda dará problemas de colisão [654, 'abacaxi'] foi colidido pela ultima inserção
     # O método que resolve esse problema, é fazendo a tabela hash encadeada.
+    

@@ -1,8 +1,8 @@
 """ Exemplo de estrutura de FILA, usando encadeamento, e alguns algoritmos relacionados.
 
 Esse tipo de implementação de Fila funcionará como as demais filas, porém objetiva facilitar a alocação
-dinâmica de novos elementos e "evitar" o transbordamento de pilha, porém requer mais operações de alocação
-e também mais memória. É util para quando desconhecemos o tamanho potencial da fila.
+dinâmica de novos elementos, porém requer mais operações de alocação e também mais memória. É util para
+quando desconhecemos o tamanho potencial da fila.
 """
 __author__ = ["Caio Henriques Sica Lamas",
               "Franck Allyson da Silva Rocha"]
