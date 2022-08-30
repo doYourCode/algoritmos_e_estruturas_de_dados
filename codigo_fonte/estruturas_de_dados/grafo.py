@@ -5,6 +5,14 @@ Os vértices são os elementos, e as arestas são os pares
 ordenados das conexões entre os vértices.
 """
 
+__author__ = ["Caio Henriques Sica Lamas",
+              "Franck Allyson da Silva Rocha"]
+__date__ = "29/08/2022"
+__credits__ = ["https://www.geeksforgeeks.org/introduction-to-graphs/?ref=lbp"]
+__license__ = "GPL"
+__email__ = ["caio.lamas@ifnmg.edu.br",
+             "fasr@aluno.ifnmg.edu.br"]
+
 from codigo_fonte.utilidades.utilidades import *
 
 
@@ -38,6 +46,7 @@ class Grafo:
         self.arestas = []
 
     def etiquetas(self, lista):
+        """Função para mostrar as etiquetas de vértices/arestas"""
         return [str(valor) for valor in lista]
 
     def checar_vertices(self):
@@ -51,6 +60,7 @@ class Grafo:
         return False
 
     def inserir_vertice(self, etiqueta, valor):
+        """Inserir um vértice caso ele ainda não exista."""
         try:
             self.busca_vertice(etiqueta)
         except ValueError:
@@ -60,6 +70,7 @@ class Grafo:
             print(f'{FAIL}Já existe um vértice com a etiqueta dada.{ENDC}')
 
     def inserir_aresta(self, etiqueta_vertice1, etiqueta_vertice2):
+        """Inserir uma aresta se os vértices existem e se a aresta ainda não existe."""
         try:
             vertice1 = self.busca_vertice(etiqueta_vertice1)
             vertice2 = self.busca_vertice(etiqueta_vertice2)
@@ -78,6 +89,7 @@ class Grafo:
                 print(f'{FAIL}Já existe uma aresta com os vértices dados.{ENDC}')
 
     def remover_vertice(self, etiqueta_vertice):
+        """Remove o vértice e todas as referências de arestas nele presente."""
         try:
             vertice_encontrado = self.busca_vertice(etiqueta_vertice)
             self.vertices.remove(vertice_encontrado)
@@ -97,6 +109,7 @@ class Grafo:
             vertice_encontrado.arestas_pertencentes.clear()
 
     def remover_aresta(self, etiqueta_vertice1, etiqueta_vertice2):
+        """Remove as arestas, caso existam."""
         try:
             vertice1 = self.busca_vertice(etiqueta_vertice1)
             vertice2 = self.busca_vertice(etiqueta_vertice2)
@@ -113,6 +126,7 @@ class Grafo:
                 vertice2.arestas_pertencentes.remove(aresta_encontrada)
 
     def unir_vertices(self, etiqueta_vertice1, etiqueta_vertice2):
+        """ Une vértices, atribuindo as arestas do segundo ao primeiro."""
         try:
             vertice1 = self.busca_vertice(etiqueta_vertice1)
             vertice2 = self.busca_vertice(etiqueta_vertice2)
@@ -145,12 +159,14 @@ class Grafo:
             print(f'{FAIL}O grafo não possui a aresta com os vertices fornecidos!{ENDC}')
 
     def busca_vertice(self, etiqueta_vertice):
+        """Busca um vértice ou retorna um ValueError caso não exista."""
         for vertice in self.vertices:
             if vertice.etiqueta == etiqueta_vertice:
                 return vertice
         raise ValueError
 
     def busca_aresta(self, vertice1, vertice2):
+        """Busca um vértice ou retorna um ValueError caso não exista."""
         for aresta in self.arestas:
             if (vertice1, vertice2) == aresta.aresta:
                 return aresta
