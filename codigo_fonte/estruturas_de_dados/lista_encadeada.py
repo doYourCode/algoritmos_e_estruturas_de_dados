@@ -99,6 +99,11 @@ class ListaEncadeada:
                 return nodo
         return None
 
+    def esta_vazia(self):
+        if self._tamanho <= 0:
+            return True
+        return False
+
     def __iter__(self):
         nodo_atual = self.cabeca
         while nodo_atual:
@@ -138,4 +143,10 @@ def lista_encadeada():
     print(f"{HEADER} Teste nº 4 (Erros):  {ENDC}")
     lista.remover("Outro dia")  # ............................Tenta remover um nó que não existe
     lista.adicionar_pos("Dia do trabalhador", "Oitavo dia")  # ... Tenta adicionar um nó em local que não existe
+    print(f"{str(lista.valores)} {OKBLUE} +  Tamanho da lista: {str(len(lista))} {ENDC}")
+
+    # Testando a vericação de estar vazia
+    print(f"{HEADER} Teste nº 5 (lista vazia):  {ENDC}")
+    lista = ListaEncadeada()
+    print(lista.esta_vazia())
     print(f"{str(lista.valores)} {OKBLUE} +  Tamanho da lista: {str(len(lista))} {ENDC}")
