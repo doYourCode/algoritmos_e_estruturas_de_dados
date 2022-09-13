@@ -24,7 +24,7 @@ class Nodo:
         self.anterior = None
 
 
-class ListaEncadeada:
+class ListaDuplamenteEncadeada:
     """
     Representa uma lista cujos elementos (nós) estão encadeados por elos.
     A lista encadeada simples só pode ser iterada em um único sentido (para frente).
@@ -115,41 +115,3 @@ class ListaEncadeada:
 
     def __len__(self):
         return self._tamanho
-
-
-def lista_duplamente_encadeada():
-    lista = ListaEncadeada()  # ........................Instancia uma nova lista (em branco)
-    # Testando inserção
-    lista.adicionar_inicio("Segunda")  # .....................Insere um primeiro elemento
-    lista.adicionar_final("Quarta")  # ........................Insere 2 elementos ao final da lista
-    lista.adicionar_final("Sexta")
-    lista.adicionar_pos("Segunda", "Terça")
-    lista.adicionar_pos("Quarta", "Quinta")
-    print(f"{HEADER} Teste nº 1 (Inserções):  {ENDC}")
-    print(f"{str(lista.valores)} {OKBLUE} +  Tamanho da lista: {str(len(lista))} {ENDC}")
-
-    lista.adicionar_inicio("Dia de são nunca")  # ............Insere 3 nós que não deveriam existir
-    lista.adicionar_final("Dia de São Luguinho")
-    lista.adicionar_pos("Quinta", "Dia do João Gomes")
-    lista.remover("Dia de são nunca")  # ................Remove os 3 nós que não deveriam existir
-    lista.remover("Dia de São Luguinho")
-    lista.remover("Dia do João Gomes")
-    print(f"{HEADER} Teste nº 2 (Remoções):  {ENDC}")
-    print(f"{str(lista.valores)} {OKBLUE} +  Tamanho da lista: {str(len(lista))} {ENDC}")
-
-    print(f"{HEADER} Teste nº 3 (Busca):  {ENDC}")
-    print(lista.buscar("Quarta").valor)
-    print(lista.buscar("Sexta").valor)
-    print(f"{str(lista.valores)} {OKBLUE} +  Tamanho da lista: {str(len(lista))} {ENDC}")
-
-    print(f"{HEADER} Teste nº 4 (Erros):  {ENDC}")
-    lista.remover("Dia de São Luguinho")  #-- Excluindo nó que não existe
-    print(lista.buscar("Dia de São Luguinho"))  #-- Bucando nó que não existe
-    print(f"{str(lista.valores)} {OKBLUE} +  Tamanho da lista: {str(len(lista))} {ENDC}")
-
-    print(f"{HEADER} Teste nº 5 (Esta Vazia):  {ENDC}")
-    print(f"{str(lista.valores)} {OKBLUE} +  Tamanho da lista: {str(len(lista))} {ENDC}")
-    print(lista.esta_vazia())
-    lista = ListaEncadeada()
-    print(f"{str(lista.valores)} {OKBLUE} +  Tamanho da lista: {str(len(lista))} {ENDC}")
-    print(lista.esta_vazia())

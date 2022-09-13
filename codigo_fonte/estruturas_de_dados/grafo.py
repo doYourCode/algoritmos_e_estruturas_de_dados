@@ -8,7 +8,9 @@ ordenados das conexões entre os vértices.
 __author__ = ["Caio Henriques Sica Lamas",
               "Franck Allyson da Silva Rocha"]
 __date__ = "29/08/2022"
-__credits__ = ["https://www.geeksforgeeks.org/introduction-to-graphs/?ref=lbp"]
+__credits__ = ["https://www.geeksforgeeks.org/introduction-to-graphs/?ref=lbp",
+               "https://www.educba.com/graph-in-data-structure/?source=leftnav",
+               "https://www.educba.com/types-of-graph-in-data-structure/"]
 __license__ = "GPL"
 __email__ = ["caio.lamas@ifnmg.edu.br",
              "fasr@aluno.ifnmg.edu.br"]
@@ -30,8 +32,8 @@ class Vertice:
 
 class Aresta:
     """ Representa uma aresta do grafo """
-    def __init__(self, verticeA, verticeB, informacao=None, peso=None):
-        self.aresta = (verticeA, verticeB)
+    def __init__(self, vertice_a, vertice_b, informacao=None, peso=None):
+        self.aresta = (vertice_a, vertice_b)
         self.informacao = informacao
         self.peso = peso
 
@@ -171,62 +173,3 @@ class Grafo:
             if (vertice1, vertice2) == aresta.aresta:
                 return aresta
         raise ValueError
-
-
-def grafo():
-    grafo_teste = Grafo()
-
-    # Teste de inserção de vértices
-
-    grafo_teste.inserir_vertice('a', 2)
-    grafo_teste.inserir_vertice('b', 7)
-    grafo_teste.inserir_vertice('c', 3)
-    grafo_teste.inserir_vertice('d', 10)
-
-    print(f'{HEADER} Teste Nº 1 (Inserções vértices): {ENDC}')
-    print(f'{str(grafo_teste.etiquetas(grafo_teste.vertices))} {OKBLUE} Quantidade de Vértices: {str(len(grafo_teste.vertices))}{ENDC}')
-    print(f'{str(grafo_teste.etiquetas(grafo_teste.arestas))} {OKBLUE} Quantidade de arestas: {str(len(grafo_teste.arestas))}{ENDC}\n')
-    # Teste de inserção de arestas
-    grafo_teste.inserir_aresta('a', 'c')
-    grafo_teste.inserir_aresta('a', 'd')
-    grafo_teste.inserir_aresta('b', 'd')
-
-    print(f'{HEADER} Teste Nº 2 (Inserções arestas): {ENDC}')
-    print(f'{str(grafo_teste.etiquetas(grafo_teste.vertices))} {OKBLUE} Quantidade de Vértices: {str(len(grafo_teste.vertices))}{ENDC}')
-    print(f'{str(grafo_teste.etiquetas(grafo_teste.arestas))} {OKBLUE} Quantidade de arestas: {str(len(grafo_teste.arestas))}{ENDC}\n')
-
-    # Teste de exclusão de vértices
-    print(f'{HEADER} Teste Nº 3 (Remoções vértices): {ENDC}')
-    grafo_teste.remover_vertice('a')
-    grafo_teste.remover_vertice('b')
-
-    print(f'{str(grafo_teste.etiquetas(grafo_teste.vertices))} {OKBLUE} Quantidade de Vértices: {str(len(grafo_teste.vertices))}{ENDC}')
-    print(f'{str(grafo_teste.etiquetas(grafo_teste.arestas))} {OKBLUE} Quantidade de arestas: {str(len(grafo_teste.arestas))}{ENDC}\n')
-
-    # Teste de exclusão de arestas
-    # Inserindo todos os dados novamente para executar as exclusões:
-    grafo_teste.inserir_vertice('a', 2)
-    grafo_teste.inserir_vertice('b', 7)
-    grafo_teste.inserir_aresta('a', 'c')
-    grafo_teste.inserir_aresta('a', 'd')
-    grafo_teste.inserir_aresta('b', 'd')
-
-    # Exclusões:
-    grafo_teste.remover_aresta('a', 'd')
-    grafo_teste.remover_aresta('b', 'd')
-
-    print(f'{HEADER} Teste Nº 4 (Remoções arestas): {ENDC}')
-    print(f'{str(grafo_teste.etiquetas(grafo_teste.vertices))} {OKBLUE} Quantidade de Vértices: {str(len(grafo_teste.vertices))}{ENDC}')
-    print(f'{str(grafo_teste.etiquetas(grafo_teste.arestas))} {OKBLUE} Quantidade de arestas: {str(len(grafo_teste.arestas))}{ENDC}\n')
-
-    # Teste de União de Vértices
-    grafo_teste.inserir_aresta('c', 'd')
-    grafo_teste.inserir_aresta('a', 'b')
-
-    grafo_teste.unir_vertices('a', 'c')
-    print(f'{HEADER} Teste Nº 5 (União vertice): {ENDC}')
-    print(f'{str(grafo_teste.etiquetas(grafo_teste.vertices))} {OKBLUE} Quantidade de Vértices: {str(len(grafo_teste.vertices))}{ENDC}')
-    print(f'{str(grafo_teste.etiquetas(grafo_teste.arestas))} {OKBLUE} Quantidade de arestas: {str(len(grafo_teste.arestas))}{ENDC}\n')
-
-# https://www.educba.com/graph-in-data-structure/?source=leftnav
-# https://www.educba.com/types-of-graph-in-data-structure/

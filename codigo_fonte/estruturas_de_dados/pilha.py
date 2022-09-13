@@ -1,5 +1,8 @@
 # Implementação de Pilha em Python
-class Stack:
+
+# TODO -> Requer refatoração para adequação aos padrões de código do nosso projeto, nomes de variáveis, métodos, estrutura, etc.
+
+class Pilha:
 
     # Construtor # para inicializar a Stack
     def __init__(self, size):
@@ -48,27 +51,3 @@ class Stack:
     # Função para verificar se a Stack está cheia ou não
     def isFull(self):
         return self.size() == self.capacity
-
-
-if __name__ == '__main__':
-
-    stack = Stack(3)
-
-    stack.push(1)  # Inserindo 1 na Stack
-    stack.push(2)  # Inserindo 2 na Stack
-
-    stack.pop()  # removendo o elemento superior (2)
-    stack.pop()  # removendo o elemento superior (1)
-
-    stack.push(3)  # Inserindo 3 na Stack
-
-    print(f'O elemento do topo da pilha é {stack.peek()}')
-    print(f'O tamanho da pilha é {stack.size()}')
-
-    stack.pop()  # removendo o elemento superior (3)
-
-    # verifica se a Stack está vazia
-    if stack.isEmpty():
-        print('Essa pilha está vazia!')
-    else:
-        print('Essa pilha não está vazia!')
