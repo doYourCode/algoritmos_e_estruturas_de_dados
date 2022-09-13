@@ -93,3 +93,4 @@ if __name__ == '__main__':
         print('A fila está vazia!')
     else:
         print('A fila não está vazia!')
+        
