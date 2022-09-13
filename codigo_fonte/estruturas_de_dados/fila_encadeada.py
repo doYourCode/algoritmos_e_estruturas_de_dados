@@ -77,37 +77,5 @@ class FilaEncadeada:
         return self._tamanho
 
 
-def fila_encadeada():
-    filaTeste = FilaEncadeada()  # Iniciando a Fila sem valor algum.
 
-    # Teste de inserção
-    filaTeste.adicionar("Franck")
-    filaTeste.adicionar("Allyson")
-    filaTeste.adicionar("Ronaldinho")
-    print(f'{HEADER} Teste Nº 1 (Inserções): {ENDC}')
-    print(f'{str(filaTeste.valores)} {OKBLUE} Tamanho da Fila: {str(len(filaTeste))}{ENDC}\n')
-
-    # Teste de remoção
-    filaTeste.remover()
-    filaTeste.remover()  # Queremos verificar se o PEPS(Primeiro a Entrar, Primeiro a sair) está sendo cumprido.
-    print(f'{HEADER} Teste Nº 2 (Exclusões): {ENDC}')
-    print(f'{str(filaTeste.valores)} {OKBLUE} Tamanho da Fila: {str(len(filaTeste))}{ENDC}\n')
-
-    # Teste de retorno
-    print(f'{HEADER} Teste Nº 3 (Leitura): {ENDC}')
-    filaTeste.adicionar("Franck")
-    filaTeste.adicionar("Caio")
-    filaTeste.adicionar("Lamas")
-    print(f'Elemento do inicio: {str(filaTeste.ler_inicio())}')
-    print(f'Elemento do final: {str(filaTeste.ler_final())}')
-    print(f'{str(filaTeste.valores)} {OKBLUE} Tamanho da Fila: {str(len(filaTeste))}{ENDC}\n')
-
-    # Teste de Erro
-    print(f'{HEADER} Teste Nº 4 (Erro): {ENDC}')
-    filaTeste.remover()
-    filaTeste.remover()
-    filaTeste.remover()
-    filaTeste.remover()
-    filaTeste.remover()
-    print(f'{str(filaTeste.valores)} {OKBLUE} Tamanho da Fila: {str(len(filaTeste))}{ENDC}\n')
 

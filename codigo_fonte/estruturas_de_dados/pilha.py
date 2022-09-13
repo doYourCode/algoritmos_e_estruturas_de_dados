@@ -92,3 +92,10 @@ if __name__ == '__main__':
         print('Essa pilha está vazia!')
     else:
         print('Essa pilha não está vazia!')
+
+    """Verificar se a Pilha está cheia ou não"""
+    if pilha.estaVazia():
+        print('A fila está vazia!')
+    else:
+        print('A fila não está vazia!')
+

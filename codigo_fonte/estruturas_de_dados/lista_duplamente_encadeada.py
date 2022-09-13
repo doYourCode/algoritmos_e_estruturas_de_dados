@@ -24,7 +24,7 @@ class Nodo:
         self.anterior = None
 
 
-class ListaEncadeada:
+class ListaDuplamenteEncadeada:
     """
     Representa uma lista cujos elementos (nós) estão encadeados por elos.
     A lista encadeada simples só pode ser iterada em um único sentido (para frente).
@@ -78,12 +78,34 @@ class ListaEncadeada:
             novo_nodo.proximo.anterior = novo_nodo
         self._tamanho += 1
 
+    def remover(self, valor):
+        """Remove um nó específico"""
+        nodo_temp = self.cabeca
+        # Se o nó a ser excluído for a cabeça da lista
+        if nodo_temp is not None and nodo_temp.valor == valor:
+            self.cabeca = nodo_temp.proximo
+            self._tamanho -= 1
+            return
+        else:
+            while nodo_temp is not None and nodo_temp.valor != valor:
+                nodo_temp = nodo_temp.proximo
+            if nodo_temp is None:
+                print(FAIL + "ATENÇÃO!" + ENDC + " Nó '" + str(valor) + "' não foi encontrado! Exclusão não ocorreu.")
+                return
+            nodo_temp.anterior.proximo = nodo_temp.proximo
+            self._tamanho -= 1
+
     def buscar(self, valor):
         """ Busca um nó especificado. """
         for nodo in self:
             if nodo.valor == valor:
                 return nodo
         return None
+
+    def esta_vazia(self):
+        if self._tamanho <= 0:
+            return True
+        return False
 
     def __iter__(self):
         nodo_atual = self.cabeca
@@ -93,17 +115,3 @@ class ListaEncadeada:
 
     def __len__(self):
         return self._tamanho
-
-
-def lista_duplamente_encadeada():
-    lista = ListaEncadeada()  # ........................Instancia uma nova lista (em branco)
-    # Testando inserção
-    lista.adicionar_inicio("Segunda")  # .....................Insere um primeiro elemento
-    lista.adicionar_final("Quarta")  # ........................Insere 2 elementos ao final da lista
-    lista.adicionar_final("Sexta")
-    lista.adicionar_pos("Segunda", "Terça")
-    lista.adicionar_pos("Quarta", "Quinta")
-    print(f"{HEADER} Teste nº 1 (Inserções):  {ENDC}")
-    print(f"{str(lista.valores)} {OKBLUE} +  Tamanho da lista: {str(len(lista))} {ENDC}")
-
-    # TODO outros testes

@@ -6,11 +6,13 @@ __license__ = "GPL"
 __email__ = "caio.lamas@ifnmg.edu,br"
 
 
-from codigo_fonte.estruturas_de_dados.lista_encadeada import lista_encadeada
-from codigo_fonte.estruturas_de_dados.lista_duplamente_encadeada import lista_duplamente_encadeada
-from codigo_fonte.estruturas_de_dados.pilha_encadeada import pilha_encadeada
-from codigo_fonte.estruturas_de_dados.fila_encadeada import fila_encadeada
-from codigo_fonte.estruturas_de_dados.tabela_hash import tabela_hash
+from codigo_fonte.estruturas_de_dados.testes.testes_listas import *
+from codigo_fonte.estruturas_de_dados.testes.testes_filas import *
+from codigo_fonte.estruturas_de_dados.testes.testes_pilhas import *
+from codigo_fonte.estruturas_de_dados.testes.testes_hash import *
+from codigo_fonte.estruturas_de_dados.testes.testes_grafos import *
+
+
 def executar(func):
     """ Executa o teste/exemplo inserido na lista de parâmetros.
 
