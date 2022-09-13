@@ -1,10 +1,10 @@
 # Implementação de Pilha em Python
-class Stack:
+class Pilha:
 
     # Construtor # para inicializar a Stack
-    def __init__(self, size):
-        self.arr = [None] * size
-        self.capacity = size
+    def __init__(self, tamanho):
+        self.arr = [None] * tamanho
+        self.capacidade = tamanho
         self.topo = -1
 
     # Função para adicionar um elemento `valor` à Stack
@@ -20,7 +20,7 @@ class Stack:
     # Função para remover um elemento superior da Stack
     def pop(self):
         # verifica se há underflow da Stack
-        if self.isEmpty():
+        if self.estaVazia():
             print('Stack Underflow!! Calling exit()…')
             exit(-1)
 
@@ -33,42 +33,42 @@ class Stack:
 
     # Função para retornar o elemento do topo da Stack
     def peek(self):
-        if self.isEmpty():
+        if self.estaVazia():
             exit(-1)
         return self.arr[self.topo]
 
     # Função para retornar o tamanho da Stack
-    def size(self):
+    def tamanho(self):
         return self.topo + 1
 
     # Função para verificar se a Stack está vazia ou não
-    def isEmpty(self):
-        return self.size() == 0
+    def estaVazia(self):
+        return self.tamanho() == 0
 
     # Função para verificar se a Stack está cheia ou não
     def isFull(self):
-        return self.size() == self.capacity
+        return self.tamanho() == self.capacidade
 
 
 if __name__ == '__main__':
 
-    stack = Stack(3)
+    pilha = Pilha(3)
 
-    stack.push(1)  # Inserindo 1 na Stack
-    stack.push(2)  # Inserindo 2 na Stack
+    pilha.push(1)  # Inserindo 1 na Stack
+    pilha.push(2)  # Inserindo 2 na Stack
 
-    stack.pop()  # removendo o elemento superior (2)
-    stack.pop()  # removendo o elemento superior (1)
+    pilha.pop()  # removendo o elemento superior (2)
+    pilha.pop()  # removendo o elemento superior (1)
 
-    stack.push(3)  # Inserindo 3 na Stack
+    pilha.push(3)  # Inserindo 3 na Stack
 
-    print(f'O elemento do topo da pilha é {stack.peek()}')
-    print(f'O tamanho da pilha é {stack.size()}')
+    print(f'O elemento do topo da pilha é {pilha.peek()}')
+    print(f'O tamanho da pilha é {pilha.tamanho()}')
 
-    stack.pop()  # removendo o elemento superior (3)
+    pilha.pop()  # removendo o elemento superior (3)
 
     # verifica se a Stack está vazia
-    if stack.isEmpty():
+    if pilha.estaVazia():
         print('Essa pilha está vazia!')
     else:
         print('Essa pilha não está vazia!')
