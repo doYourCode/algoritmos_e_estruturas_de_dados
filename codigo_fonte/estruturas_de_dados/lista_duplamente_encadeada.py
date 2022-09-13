@@ -78,12 +78,34 @@ class ListaEncadeada:
             novo_nodo.proximo.anterior = novo_nodo
         self._tamanho += 1
 
+    def remover(self, valor):
+        """Remove um nó específico"""
+        nodo_temp = self.cabeca
+        # Se o nó a ser excluído for a cabeça da lista
+        if nodo_temp is not None and nodo_temp.valor == valor:
+            self.cabeca = nodo_temp.proximo
+            self._tamanho -= 1
+            return
+        else:
+            while nodo_temp is not None and nodo_temp.valor != valor:
+                nodo_temp = nodo_temp.proximo
+            if nodo_temp is None:
+                print(FAIL + "ATENÇÃO!" + ENDC + " Nó '" + str(valor) + "' não foi encontrado! Exclusão não ocorreu.")
+                return
+            nodo_temp.anterior.proximo = nodo_temp.proximo
+            self._tamanho -= 1
+
     def buscar(self, valor):
         """ Busca um nó especificado. """
         for nodo in self:
             if nodo.valor == valor:
                 return nodo
         return None
+
+    def esta_vazia(self):
+        if self._tamanho <= 0:
+            return True
+        return False
 
     def __iter__(self):
         nodo_atual = self.cabeca
@@ -106,4 +128,28 @@ def lista_duplamente_encadeada():
     print(f"{HEADER} Teste nº 1 (Inserções):  {ENDC}")
     print(f"{str(lista.valores)} {OKBLUE} +  Tamanho da lista: {str(len(lista))} {ENDC}")
 
-    # TODO outros testes
+    lista.adicionar_inicio("Dia de são nunca")  # ............Insere 3 nós que não deveriam existir
+    lista.adicionar_final("Dia de São Luguinho")
+    lista.adicionar_pos("Quinta", "Dia do João Gomes")
+    lista.remover("Dia de são nunca")  # ................Remove os 3 nós que não deveriam existir
+    lista.remover("Dia de São Luguinho")
+    lista.remover("Dia do João Gomes")
+    print(f"{HEADER} Teste nº 2 (Remoções):  {ENDC}")
+    print(f"{str(lista.valores)} {OKBLUE} +  Tamanho da lista: {str(len(lista))} {ENDC}")
+
+    print(f"{HEADER} Teste nº 3 (Busca):  {ENDC}")
+    print(lista.buscar("Quarta").valor)
+    print(lista.buscar("Sexta").valor)
+    print(f"{str(lista.valores)} {OKBLUE} +  Tamanho da lista: {str(len(lista))} {ENDC}")
+
+    print(f"{HEADER} Teste nº 4 (Erros):  {ENDC}")
+    lista.remover("Dia de São Luguinho")  #-- Excluindo nó que não existe
+    print(lista.buscar("Dia de São Luguinho"))  #-- Bucando nó que não existe
+    print(f"{str(lista.valores)} {OKBLUE} +  Tamanho da lista: {str(len(lista))} {ENDC}")
+
+    print(f"{HEADER} Teste nº 5 (Esta Vazia):  {ENDC}")
+    print(f"{str(lista.valores)} {OKBLUE} +  Tamanho da lista: {str(len(lista))} {ENDC}")
+    print(lista.esta_vazia())
+    lista = ListaEncadeada()
+    print(f"{str(lista.valores)} {OKBLUE} +  Tamanho da lista: {str(len(lista))} {ENDC}")
+    print(lista.esta_vazia())
