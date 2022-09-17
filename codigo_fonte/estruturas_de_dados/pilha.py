@@ -12,20 +12,20 @@ class Pilha:
 
     """Construtor para inicializar a Pilha"""
     def __init__(self, tamanho):
-        self.valor = None
+        self.valores = None
         self.arr = [None] * tamanho
         self.capacidade = tamanho
         self.topo = -1
 
     """Função para adicionar um elemento valor à Pilha"""
-    def inserir(self, valor):
+    def inserir(self, valores):
         if self.estaCheio():
             print('Pilha cheia! Encerrando processo...')
             exit(-1)
 
-        print(f'Inserindo {valor} na pilha...')
+        print(f'Inserindo {valores} na pilha...')
         self.topo = self.topo + 1
-        self.arr[self.topo] = valor
+        self.arr[self.topo] = valores
 
     """Função para remover um elemento superior da Pilha"""
     def remover(self):
@@ -34,7 +34,7 @@ class Pilha:
             print('Pilha vazia! Encerrando processo...')
             exit(-1)
 
-        print(f'Removendo {self.peek()} da pilha')
+        print(f'Removendo {self.ler_topo()} da pilha')
 
         """Diminui o tamanho da Pilha em 1 e (opcionalmente) retorna o elemento estourado"""
         topo = self.arr[self.topo]
@@ -42,7 +42,7 @@ class Pilha:
         return topo
 
     """Função para retornar o elemento do topo da Pilha"""
-    def peek(self):
+    def ler_topo(self):
         if self.estaVazia():
             exit(-1)
         return self.arr[self.topo]
@@ -60,41 +60,3 @@ class Pilha:
         return self.tamanho() == self.capacidade
 
 
-if __name__ == '__main__':
-
-    pilha = Pilha(3)  # ............ Define o tamanho da Pilha
-    #Testando inserção
-    pilha.inserir(1)  # ............ Inserindo 1 na Pilha
-    pilha.inserir(2)  # ............ Inserindo 2 na Pilha
-    pilha.inserir(3)  # ............ Inserindo 3 na Pilha
-    print(f'O elemento do topo da pilha é {pilha.peek()}')
-    print(f'O tamanho da pilha é {pilha.tamanho()}')
-    print(f'{HEADER}Teste Nº 1 (Inserções): {ENDC}')
-    print(f'{str(pilha.valor)} {OKBLUE} Tamanho da Fila: {pilha.tamanho()}{ENDC}\n')
-
-    #Testando remoção
-    pilha.remover()  # ............ Removendo o elemento superior (3)
-    pilha.remover()  # ............ Removendo o elemento superior (2)
-    print(f'{HEADER}Teste Nº 2 (Exclusões): {ENDC}')
-    print(f'{str(pilha.valor)} {OKBLUE} Tamanho da Fila: {pilha.tamanho()}{ENDC}\n')
-
-    # Testando Erro
-    print(f'{HEADER}Teste Nº 4 (Erro): {ENDC}')
-    pilha.remover()
-    pilha.remover()
-    pilha.remover()
-    pilha.remover()
-    pilha.remover()
-    print(f'{pilha.valor} {OKBLUE} Tamanho da fila: {pilha.tamanho()} {ENDC}')
-
-    # Verificando se a Pilha está vazia ou não
-    if pilha.estaVazia():
-        print('Essa pilha está vazia!')
-    else:
-        print('Essa pilha não está vazia!')
-
-    """Verificar se a Pilha está cheia ou não"""
-    if pilha.estaVazia():
-        print('A fila está vazia!')
-    else:
-        print('A fila não está vazia!')
