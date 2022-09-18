@@ -36,7 +36,7 @@ def fila_encadeada():
     fila_teste.remover()
     print(f'{str(fila_teste.valores)} {OKBLUE} Tamanho da Fila: {str(len(fila_teste))}{ENDC}\n')
 
-if __name__ == '__main__':
+def fila():
 
     fila_teste = Fila(20)  # ............ Define o tamanho da fila
 
