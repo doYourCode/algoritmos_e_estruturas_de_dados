@@ -5,8 +5,6 @@ __credits__ = ["https://www.techiedelight.com/pt/filaTesteueue-implementation-py
 __license__ = "GPL"
 __email__ = "eso@aluno.ifnmg.edu.br, caio.lamas@ifnmg.edu.br"
 
-from codigo_fonte.utilidades.utilidades import *
-
 # Implementação de fila em Python
 class Fila:
     """Inicializar fila"""

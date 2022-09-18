@@ -1,6 +1,7 @@
 from codigo_fonte.utilidades.utilidades import *
 from codigo_fonte.estruturas_de_dados.fila_encadeada import FilaEncadeada
 from codigo_fonte.estruturas_de_dados.fila import Fila
+from codigo_fonte.estruturas_de_dados.fila_dupla import Fila_dupla
 
 def fila_encadeada():
     fila_teste = FilaEncadeada()  # Iniciando a Fila sem valor algum.
@@ -74,6 +75,44 @@ def fila():
 
     # Verificando se a fila está vazia ou não
     if fila_teste.estaVazia():
+        print('A fila está vazia!')
+    else:
+        print('A fila não está vazia!')
+
+def fila_dupla():
+    
+    filaTeste = Fila_dupla(20)  # ............ Define o tamanho da fila
+
+    # Testando inserção no inicio
+    print(f'{HEADER}Teste Nº 1 (Inserções no incio): {ENDC}')
+    filaTeste.adicionarInicio(3)  # ............ Adiciona o elemento no inicio da fila
+    filaTeste.adicionarInicio(2)  # ............ Adiciona o elemento no inicio da fila
+    filaTeste.adicionarInicio(1)  # ............ Adiciona o elemento no inicio da fila
+    print(f'O tamanho da Fila é: {filaTeste.tamanho()}{ENDC}\n')
+
+    # Testando inserção no final
+    print(f'{HEADER}Teste Nº 2 (Inserções no final): {ENDC}')
+    filaTeste.adicionarFinal(99)  # ............ Adiciona o elemento no final da fila
+    filaTeste.adicionarFinal(75)  # ............ Adiciona o elemento no final da fila
+    filaTeste.adicionarFinal(51)  # ............ Adiciona o elemento no final da fila
+    print(f'O tamanho da fila é: {filaTeste.tamanho()}{ENDC}\n')
+
+    # Testando a remoção
+    print(f'{HEADER}Teste Nº 3 (Exclusões): {ENDC}')
+    filaTeste.removerInicio()  # ............ Remove o elemento da inicio da fila
+    filaTeste.removerInicio()  # ............ Remove o elemento da inicio da fila
+    filaTeste.removerFinal()  # ............ Remove o elemento do final da fila
+
+    # Testando Erro
+    print(f'{HEADER}Teste Nº 4 (Erro): {ENDC}')
+    filaTeste.removerInicio()  # ............ Remove o elemento da inicio da fila
+    filaTeste.removerInicio()  # ............ Remove o elemento da inicio da fila
+    filaTeste.removerInicio()  # ............ Remove o elemento da inicio da fila
+    filaTeste.removerInicio()  # ............ Remove o elemento da inicio da fila
+    filaTeste.removerInicio()  # ............ Remove o elemento da inicio da fila
+
+    # Verificando se a fila está vazia ou não
+    if filaTeste.estaVazia():
         print('A fila está vazia!')
     else:
         print('A fila não está vazia!')
