@@ -4,14 +4,15 @@ Esse tipo de implementação de pilha funcionará como as demais pilhas, porém 
 dinâmica de novos elementos e "evitar" o transbordamento de pilha, porém requer mais operações de alocação
 e também mais memória. É util para quando desconhecemos o tamanho potencial da pilha.
 """
-__author__ = ["Caio Henriques Sica Lamas",
-              "Franck Allyson da Silva Rocha"]
+__author__ = ["Franck Allyson da Silva Rocha",
+              "Caio Henriques Sica Lamas"]
 __date__ = "17/08/2022"
 __credits__ = ["https://www.ime.usp.br/~rt/mac57102012/RT555pilhalink555.pdf",
                "https://www.ufsm.br/pet/sistemas-de-informacao/2020/04/01/entendendo-listas-pilhas-e-filas/",
                "https://www.geeksforgeeks.org/implement-a-stack-using-singly-linked-list/"]
 __license__ = "GPL"
-__email__ = "caio.lamas@ifnmg.edu,br"
+__email__ = ["caio.lamas@ifnmg.edu.br",
+             "fasr@aluno.ifnmg.edu.br"]
 
 
 from codigo_fonte.utilidades.utilidades import *

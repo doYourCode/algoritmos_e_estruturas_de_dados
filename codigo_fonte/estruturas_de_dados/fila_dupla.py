@@ -1,5 +1,5 @@
-__author__ = ["Caio Henriques Sica Lamas",
-              "Everton Sousa Oliveira"]
+__author__ = ["Everton Sousa Oliveira",
+              "Caio Henriques Sica Lamas"]
 __date__ = "13/09/2022"
 __credits__ = ["https://www.askpython.com/python/examples/double-ended-queue"]
 __license__ = "GPL"

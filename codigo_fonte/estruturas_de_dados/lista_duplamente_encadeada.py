@@ -3,13 +3,16 @@
 Uma lista duplamente encadeada se comportará como uma lista, com a exceção de que poderá ser transcorrida
 em dois sentidos, pois, em seus nodos, guarda referências para os próximos elementos, assim como os anteriores.
 """
-__author__ = "Caio Henriques Sica Lamas"
+
+__author__ = ["Franck Allyson da Silva Rocha",
+              "Caio Henriques Sica Lamas"]
 __date__ = "16/08/2022"
 __credits__ = ["https://www.tutorialspoint.com/python_data_structure/python_advanced_linked_list.htm",
                "https://www.geeksforgeeks.org/doubly-linked-list/",
                "https://www.programiz.com/dsa/doubly-linked-list"]
 __license__ = "GPL"
-__email__ = "caio.lamas@ifnmg.edu,br"
+__email__ = ["caio.lamas@ifnmg.edu.br",
+             "fasr@aluno.ifnmg.edu.br"]
 
 
 from codigo_fonte.utilidades.utilidades import *

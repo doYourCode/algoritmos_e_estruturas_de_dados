@@ -1,12 +1,11 @@
-"""
-Grafos são estruturas de dados não-lineares
+""" Grafos são estruturas de dados não-lineares
 Compreendendo um conjunto finiito de vértices e arestas.
 Os vértices são os elementos, e as arestas são os pares
 ordenados das conexões entre os vértices.
 """
 
-__author__ = ["Caio Henriques Sica Lamas",
-              "Franck Allyson da Silva Rocha"]
+__author__ = ["Franck Allyson da Silva Rocha",
+              "Caio Henriques Sica Lamas"]
 __date__ = "29/08/2022"
 __credits__ = ["https://www.geeksforgeeks.org/introduction-to-graphs/?ref=lbp",
                "https://www.educba.com/graph-in-data-structure/?source=leftnav",

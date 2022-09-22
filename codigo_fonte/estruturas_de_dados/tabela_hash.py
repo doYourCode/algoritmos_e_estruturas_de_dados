@@ -1,19 +1,18 @@
-"""
-Tabela hash na estrutura de dados, Tabela Hash é a tabela que armazena
+""" Tabela hash na estrutura de dados, Tabela Hash é a tabela que armazena
 todos os valores do código hash usado ao armazenar as chaves e valores de
 dados do elemento usando o mecanismo de hashing. A tabela hash armazena
 códigos hash que são gerados usando a função hash. Hashing é o mecanismo
 que ajuda a identificar todos os objetos exclusivamente dentro do conjunto de grupos de objetos.
 """
 
-__author__ = ["Caio Henriques Sica Lamas",
-              "Franck Allyson da Silva Rocha"]
+__author__ = ["Franck Allyson da Silva Rocha",
+              "Caio Henriques Sica Lamas"]
 __date__ = "24/08/2022"
 __credits__ = ["https://www.educba.com/hash-table-in-data-structure/?source=leftnav",
                "https://www.programiz.com/dsa/hash-table",
                "https://www2.unifap.br/furtado/files/2016/11/Aula7.pdf"]
 __license__ = "GPL"
-__email__ = ["caio.lamas@ifnmg.edu,br",
+__email__ = ["caio.lamas@ifnmg.edu.br",
              "fasr@aluno.ifnmg.edu.br"]
 
 

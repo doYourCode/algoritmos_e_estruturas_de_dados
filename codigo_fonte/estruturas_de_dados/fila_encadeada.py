@@ -4,8 +4,8 @@ Esse tipo de implementação de Fila funcionará como as demais filas, porém ob
 dinâmica de novos elementos, porém requer mais operações de alocação e também mais memória. É util para
 quando desconhecemos o tamanho potencial da fila.
 """
-__author__ = ["Caio Henriques Sica Lamas",
-              "Franck Allyson da Silva Rocha"]
+__author__ = ["Franck Allyson da Silva Rocha",
+              "Caio Henriques Sica Lamas"]
 __date__ = "20/08/2022"
 __credits__ = [""]  # TODO
 __license__ = "GPL"
