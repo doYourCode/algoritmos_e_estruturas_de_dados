@@ -25,7 +25,3 @@ def FIFO_sistema_batch():
         lote.remover()
 
         print(f'{WARNING}Processo {c} foi finalizado!{ENDC}')
-
-
-FIFO_sistema_batch()
-

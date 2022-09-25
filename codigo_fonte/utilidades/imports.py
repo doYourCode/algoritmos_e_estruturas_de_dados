@@ -12,6 +12,9 @@ from codigo_fonte.estruturas_de_dados.testes.testes_pilhas import *
 from codigo_fonte.estruturas_de_dados.testes.testes_hash import *
 from codigo_fonte.estruturas_de_dados.testes.testes_grafos import *
 
+from exemplos.processos_fifo_batch import *
+from exemplos.processos_sjf_batch import *
+
 
 def executar(func):
     """ Executa o teste/exemplo inserido na lista de parâmetros.

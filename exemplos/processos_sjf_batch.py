@@ -33,7 +33,3 @@ def SJF_sistema_batch():
             if chave_valor[1] == valor_removido:
                 print(f'Processo {chave} foi finalizado!')
                 break
-
-
-SJF_sistema_batch()
-

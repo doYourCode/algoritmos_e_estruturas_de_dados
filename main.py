@@ -11,4 +11,4 @@ from codigo_fonte.utilidades.imports import *
 
 if __name__ == '__main__':
 
-    executar(tabela_hash_encadeada)
+    executar(SJF_sistema_batch)
