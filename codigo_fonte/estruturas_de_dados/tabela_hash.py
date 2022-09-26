@@ -1,4 +1,5 @@
-""" Tabela hash na estrutura de dados, Tabela Hash é a tabela que armazena
+"""
+Tabela hash na estrutura de dados, Tabela Hash é a tabela que armazena
 todos os valores do código hash usado ao armazenar as chaves e valores de
 dados do elemento usando o mecanismo de hashing. A tabela hash armazena
 códigos hash que são gerados usando a função hash. Hashing é o mecanismo
@@ -12,8 +13,8 @@ __credits__ = ["https://www.educba.com/hash-table-in-data-structure/?source=left
                "https://www.programiz.com/dsa/hash-table",
                "https://www2.unifap.br/furtado/files/2016/11/Aula7.pdf"]
 __license__ = "GPL"
-__email__ = ["caio.lamas@ifnmg.edu.br",
-             "fasr@aluno.ifnmg.edu.br"]
+__email__ = ["fasr@aluno.ifnmg.edu.br",
+             "caio.lamas@ifnmg.edu,br"]
 
 
 class TabelaHash:
@@ -23,7 +24,12 @@ class TabelaHash:
         self._tabela = [[], ] * self._capacidade
 
     def checar_primo(self, valor):
-        """ Função que valida se o número é realmente primo """
+        '''
+        Função que valida se o número é realmente primo
+
+        :param valor: número que será testado
+        :return: 0 -> caso NÃO seja primo | 1 -> caso seja primo
+        '''
         if valor == 1 or valor == 0:
             return 0
 
@@ -33,7 +39,12 @@ class TabelaHash:
         return 1
 
     def obter_primo(self, numero):
-        """ Função obtém o primeiro primo superior mais próximo 11"""
+        '''
+        Busca um número primo superior mais próximo
+
+        :param numero: número que será modificado
+        :return: Número primo
+        '''
         if numero % 2 == 0:
             numero += 1
 
@@ -43,19 +54,45 @@ class TabelaHash:
         return numero
 
     def gerar_codigo_hash(self, chave):
-        """ Função para gerar o código Hash """
+        '''
+        Gerador de codigo Hash
+
+        :param chave: Chave para a geração do código
+        :return: Código Hash
+        '''
         return chave % self._capacidade
 
     def inserir_dado(self, chave, valor):
+        '''
+        Insere o par ordenado (chave, valor) na tabela
+
+        :param chave: Chave do dado
+        :param valor: Valor do dado
+        '''
         indice = self.gerar_codigo_hash(chave)
         self._tabela[indice] = [chave, valor]
 
     def deletar_dado(self, chave):
+        '''
+        Exclui o dado solicitado através da chave
+
+        :param chave: Chave do dado
+        '''
         indice = self.gerar_codigo_hash(chave)
         self._tabela[indice] = []
 
     def __str__(self):
+        '''
+        Prototype de string, definimos o que será mostrado ao printarmos a instancia de classe
+
+        :return: String de valores contidos na tabela
+        '''
         return str(self._tabela)
 
     def __len__(self):
+        '''
+        Prototype da função len
+
+        :return: Tamanho total da tabela
+        '''
         return self._capacidade

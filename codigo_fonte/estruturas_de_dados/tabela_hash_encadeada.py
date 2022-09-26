@@ -25,6 +25,7 @@ class TabelaHashEncadeada:
     def __init__(self, tamanho):
         '''
         Construtor
+
         :param tamanho: Tamanho que a tabela terá
         '''
         self._capacidade = self.obter_primo(tamanho)
@@ -35,6 +36,7 @@ class TabelaHashEncadeada:
     def checar_primo(self, valor):
         '''
         Função que valida se o número é realmente primo
+
         :param valor: número que será testado
         :return: 0 -> caso NÃO seja primo | 1 -> caso seja primo
         '''
@@ -50,6 +52,7 @@ class TabelaHashEncadeada:
     def obter_primo(self, numero):
         '''
         Busca um número primo superior mais próximo
+
         :param numero: número que será modificado
         :return: Número primo
         '''
@@ -64,6 +67,7 @@ class TabelaHashEncadeada:
     def gerar_codigo_hash(self, chave):
         '''
         Gerador de codigo Hash
+
         :param chave: Chave para a geração do código
         :return: Código Hash
         '''
@@ -72,6 +76,7 @@ class TabelaHashEncadeada:
     def inserir_dados(self, chave, valor):
         '''
         Insere o par ordenado (chave, valor) na tabela
+
         :param chave: Chave do dado
         :param valor: Valor do dado
         '''
@@ -81,6 +86,7 @@ class TabelaHashEncadeada:
     def buscar_pela_chave(self, chave):
         '''
         Busca pela chave, complexidade O(n)
+
         :param chave: chave do dado buscado
         :return: retorna o conjunto (chave, valor) para o dado solicitado
         '''
@@ -93,6 +99,7 @@ class TabelaHashEncadeada:
     def bucar_pelo_valor(self, valor):
         '''
         Busca pelo valor; complexidade O(n^2) pois é necessário percorrer os indices e depois a lista.
+
         :param valor: valor do dado buscado
         :return: retorna o conjunto (chave, valor) para o dado solicitado
         '''
@@ -104,6 +111,7 @@ class TabelaHashEncadeada:
     def deletar_dados(self, chave):
         '''
         Exclui o dado solicitado através da chave
+
         :param chave: Chave do dado
         '''
         indice = self.gerar_codigo_hash(chave)
@@ -114,6 +122,7 @@ class TabelaHashEncadeada:
     def valores(self):
         '''
         Gera uma lista de listas contendo os dados da tabela
+
         :return: Valores organizados contidos na tabela
         '''
         return [lista.valores for lista in self]
@@ -121,6 +130,7 @@ class TabelaHashEncadeada:
     def __iter__(self):
         '''
         Prototype de Iteração, definimos o que será percorrido ao iterarmos sobre a instancia de classe
+
         :return: retorna cada lista contida na tabela
         '''
         for lista in self._tabela:
@@ -129,6 +139,7 @@ class TabelaHashEncadeada:
     def __str__(self):
         '''
         Prototype de string, definimos o que será mostrado ao printarmos a instancia de classe
+
         :return: String de valores contidos na tabela
         '''
         return f'{str(self.valores)}'
@@ -136,6 +147,7 @@ class TabelaHashEncadeada:
     def __len__(self):
         '''
         Tamanho da tabela
+
         :return: Tamanho total da tabela
         '''
         return self._capacidade
