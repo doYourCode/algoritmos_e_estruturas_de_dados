@@ -11,8 +11,8 @@ __credits__ = ["https://www.ime.usp.br/~rt/mac57102012/RT555pilhalink555.pdf",
                "https://www.ufsm.br/pet/sistemas-de-informacao/2020/04/01/entendendo-listas-pilhas-e-filas/",
                "https://www.geeksforgeeks.org/implement-a-stack-using-singly-linked-list/"]
 __license__ = "GPL"
-__email__ = ["caio.lamas@ifnmg.edu.br",
-             "fasr@aluno.ifnmg.edu.br"]
+__email__ = ["fasr@aluno.ifnmg.edu.br",
+             "caio.lamas@ifnmg.edu,br"]
 
 
 from codigo_fonte.utilidades.utilidades import *
@@ -37,23 +37,39 @@ class PilhaEncadeada:
 
     @property
     def valores(self):
-        """ Conjunto de nós """
+        '''
+        Conjunto de nós
+
+        :return: lista com o valor que cada nó da pilha
+        '''
         return [nodo.valor for nodo in self]
 
     def adicionar(self, valor):
-        """ Adiciona um novo nó ao topo da pilha """
+        '''
+        Adiciona um novo nó ao topo da pilha
+
+        :param valor: Informação a ser armazenada
+        '''
         novo_nodo_topo = Nodo(valor)
         novo_nodo_topo.anterior = self.topo
         self.topo = novo_nodo_topo
         self._tamanho += 1
       
     def ler_topo(self):
-        """ Retorna (Sem remover) o valor do topo da pilha"""
+        '''
+        Lê o valor do topo da pilha
+
+        :return: Valor do nó do topo da pilha
+        '''
         nodo_topo = self.topo
         return nodo_topo.valor
 
     def remover(self):
-        """ Remove o elemento do topo da pilha """
+        '''
+        Remove o elemento do topo da pilha
+
+        :return: Valor do nó removido ou nada, caso não tenha nenhum nó.
+        '''
         if self.topo is None:
             print(f"{FAIL}Não há nenhum elemento na pilha!{ENDC}")
             return
@@ -66,10 +82,20 @@ class PilhaEncadeada:
         return valor
 
     def __iter__(self):
+        '''
+        Prototype de iteração
+
+        :return: Cada nó presente na pilha
+        '''
         nodo_topo = self.topo
         while nodo_topo:
             yield nodo_topo
             nodo_topo = nodo_topo.anterior
 
     def __len__(self):
+        '''
+        Prototype da função len
+
+        :return: Tamanho da pilha
+        '''
         return self._tamanho
