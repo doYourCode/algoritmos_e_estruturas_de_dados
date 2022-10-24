@@ -8,7 +8,7 @@ from codigo_fonte.estruturas_de_dados.fila import Fila
 from codigo_fonte.utilidades.utilidades import *
 
 
-def FIFO_sistema_batch():
+def fifo_sistema_batch():
     quantidade = int(input('Quantidade de processos que serão usados nesse lote: '))
 
     lote = Fila(quantidade)
@@ -16,10 +16,7 @@ def FIFO_sistema_batch():
         lote.adicionar(c)
         print(f'{OKGREEN}Processo {c} Adicionado no Lote!{ENDC}')
 
-    while True:
-        print('Pressione Enter para continuar')
-        input()
-        break
+    input('Tecle enter para continuar')
 
     for c in range(0, quantidade):
         lote.remover()
