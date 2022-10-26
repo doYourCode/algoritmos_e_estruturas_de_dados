@@ -2,6 +2,8 @@ from codigo_fonte.utilidades.utilidades import *
 from codigo_fonte.estruturas_de_dados.fila_encadeada import FilaEncadeada
 from codigo_fonte.estruturas_de_dados.fila import Fila
 from codigo_fonte.estruturas_de_dados.fila_dupla import Fila_dupla
+from codigo_fonte.estruturas_de_dados.fila_circular_encadeada import FilaCircularEncadeada
+
 
 def fila_encadeada():
     fila_teste = FilaEncadeada()  # Iniciando a Fila sem valor algum.
@@ -36,6 +38,7 @@ def fila_encadeada():
     fila_teste.remover()
     fila_teste.remover()
     print(f'{str(fila_teste.valores)} {OKBLUE} Tamanho da Fila: {str(len(fila_teste))}{ENDC}\n')
+
 
 def fila():
 
@@ -79,6 +82,7 @@ def fila():
     else:
         print('A fila não está vazia!')
 
+
 def fila_dupla():
     
     filaTeste = Fila_dupla(20)  # ............ Define o tamanho da fila
@@ -116,3 +120,42 @@ def fila_dupla():
         print('A fila está vazia!')
     else:
         print('A fila não está vazia!')
+
+
+def fila_circular_encadeada():
+    fila_circular_teste = FilaCircularEncadeada()
+
+    # Testando a inserção
+    print(f'{HEADER}Teste Nº 1 (Inserções no incio): {ENDC}')
+    fila_circular_teste.enfileirar("Franck")
+    fila_circular_teste.enfileirar("Pedro")
+    fila_circular_teste.enfileirar("Ronaldo")
+    fila_circular_teste.enfileirar("Pereira")
+    fila_circular_teste.enfileirar("Ítalo")
+    print(f'Primeiro elemento: {WARNING}{fila_circular_teste.primeiro_elemento()}{ENDC}\n'
+          f'Último elemento: {WARNING}{fila_circular_teste.ultimo_elemento()}{ENDC}\n'
+          f'Pra quem o último elemento está apontando: {WARNING}{fila_circular_teste.ultimo.proximo.valor}{ENDC}')
+
+    print(f'{str(fila_circular_teste.valores)} {OKBLUE} Tamanho da Fila: {len(fila_circular_teste)}{ENDC}\n')
+    # Testando a exclusão
+    print(f'{HEADER}Teste Nº 2 (Exclusões): {ENDC}')
+    print(f'{OKBLUE}Desenfileirando {fila_circular_teste.desenfilerar()}{ENDC}')
+    print(f'{OKBLUE}Desenfileirando {fila_circular_teste.desenfilerar()}{ENDC}')
+
+    print(f'Primeiro elemento: {WARNING}{fila_circular_teste.primeiro_elemento()}{ENDC}\n'
+          f'Último elemento: {WARNING}{fila_circular_teste.ultimo_elemento()}{ENDC}\n'
+          f'Pra quem o último elemento está apontando: {WARNING}{fila_circular_teste.ultimo.proximo.valor}{ENDC}')
+    print(f'{str(fila_circular_teste.valores)} {OKBLUE} Tamanho da Fila: {len(fila_circular_teste)}{ENDC}\n')
+
+    # Testando se está vazia
+    print(f'{HEADER}Teste Nº 3 (Verificar se está vazia): {ENDC}')
+    print(f'{WARNING}A fila está vazia: {fila_circular_teste.vazia()}{WARNING}')
+    print(f'{str(fila_circular_teste.valores)} {OKBLUE} Tamanho da Fila: {len(fila_circular_teste)}{ENDC}\n')
+
+    # Testando erros
+    print(f'{HEADER}Teste Nº 4 (Erros): {ENDC}')
+    print(f'{OKBLUE}Desenfileirando {fila_circular_teste.desenfilerar()}{ENDC}')
+    print(f'{OKBLUE}Desenfileirando {fila_circular_teste.desenfilerar()}{ENDC}')
+    print(f'{OKBLUE}Desenfileirando {fila_circular_teste.desenfilerar()}{ENDC}')
+    fila_circular_teste.desenfilerar()
+    print(f'{str(fila_circular_teste.valores)} {OKBLUE} Tamanho da Fila: {len(fila_circular_teste)}{ENDC}\n')
