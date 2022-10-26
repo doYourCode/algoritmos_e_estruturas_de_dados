@@ -43,7 +43,12 @@ class FilaCircularEncadeada:
         return [nodo.valor for nodo in self]
 
     def enfileirar(self, valor):
-        """Função que adiciona um valor a fila"""
+        """
+        Função que adiciona um valor na fila
+
+        :param valor: Valor a ser adicionado
+        :return:
+        """
         novo_nodo = Nodo(valor)
         if self.vazia():
             self.primeiro = novo_nodo
@@ -57,7 +62,7 @@ class FilaCircularEncadeada:
         self.ultimo.proximo = self.primeiro
         self._tamanho += 1
 
-    def desenfilerar(self):
+    def desenfileirar(self):
         """
         Função que remove o primeiro valor da fila
 
