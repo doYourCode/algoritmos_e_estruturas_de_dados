@@ -11,4 +11,4 @@ from codigo_fonte.utilidades.imports import *
 
 if __name__ == '__main__':
 
-    executar(fila_circular_encadeada)
+    executar(fila_dupla_encadeada)

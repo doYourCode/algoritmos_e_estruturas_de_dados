@@ -3,7 +3,7 @@ from codigo_fonte.estruturas_de_dados.fila_encadeada import FilaEncadeada
 from codigo_fonte.estruturas_de_dados.fila import Fila
 from codigo_fonte.estruturas_de_dados.fila_dupla import Fila_dupla
 from codigo_fonte.estruturas_de_dados.fila_circular_encadeada import FilaCircularEncadeada
-
+from codigo_fonte.estruturas_de_dados.fila_dupla_encadeada import FilaDuplaEncadeada
 
 def fila_encadeada():
     fila_teste = FilaEncadeada()  # Iniciando a Fila sem valor algum.
@@ -126,7 +126,7 @@ def fila_circular_encadeada():
     fila_circular_teste = FilaCircularEncadeada()
 
     # Testando a inserção
-    print(f'{HEADER}Teste Nº 1 (Inserções no incio): {ENDC}')
+    print(f'{HEADER}Teste Nº 1 (Inserções no final): {ENDC}')
     fila_circular_teste.enfileirar("Franck")
     fila_circular_teste.enfileirar("Pedro")
     fila_circular_teste.enfileirar("Ronaldo")
@@ -139,8 +139,8 @@ def fila_circular_encadeada():
     print(f'{str(fila_circular_teste.valores)} {OKBLUE} Tamanho da Fila: {len(fila_circular_teste)}{ENDC}\n')
     # Testando a exclusão
     print(f'{HEADER}Teste Nº 2 (Exclusões): {ENDC}')
-    print(f'{OKBLUE}Desenfileirando {fila_circular_teste.desenfilerar()}{ENDC}')
-    print(f'{OKBLUE}Desenfileirando {fila_circular_teste.desenfilerar()}{ENDC}')
+    print(f'{OKBLUE}Desenfileirando {fila_circular_teste.desenfileirar()}{ENDC}')
+    print(f'{OKBLUE}Desenfileirando {fila_circular_teste.desenfileirar()}{ENDC}')
 
     print(f'Primeiro elemento: {WARNING}{fila_circular_teste.primeiro_elemento()}{ENDC}\n'
           f'Último elemento: {WARNING}{fila_circular_teste.ultimo_elemento()}{ENDC}\n'
@@ -154,8 +154,56 @@ def fila_circular_encadeada():
 
     # Testando erros
     print(f'{HEADER}Teste Nº 4 (Erros): {ENDC}')
-    print(f'{OKBLUE}Desenfileirando {fila_circular_teste.desenfilerar()}{ENDC}')
-    print(f'{OKBLUE}Desenfileirando {fila_circular_teste.desenfilerar()}{ENDC}')
-    print(f'{OKBLUE}Desenfileirando {fila_circular_teste.desenfilerar()}{ENDC}')
-    fila_circular_teste.desenfilerar()
+    print(f'{OKBLUE}Desenfileirando {fila_circular_teste.desenfileirar()}{ENDC}')
+    print(f'{OKBLUE}Desenfileirando {fila_circular_teste.desenfileirar()}{ENDC}')
+    print(f'{OKBLUE}Desenfileirando {fila_circular_teste.desenfileirar()}{ENDC}')
+    fila_circular_teste.desenfileirar()
     print(f'{str(fila_circular_teste.valores)} {OKBLUE} Tamanho da Fila: {len(fila_circular_teste)}{ENDC}\n')
+
+
+def fila_dupla_encadeada():
+    fila_dupla_encadeada_teste = FilaDuplaEncadeada()
+    # Testando a inserção
+
+    print(f'{HEADER}Teste Nº 1 (Inserções no final): {ENDC}')
+    fila_dupla_encadeada_teste.enfileirar("Franck")
+    print(f'{str(fila_dupla_encadeada_teste.valores())}')
+    fila_dupla_encadeada_teste.enfileirar("Pedro")
+    print(f'{str(fila_dupla_encadeada_teste.valores())}')
+    fila_dupla_encadeada_teste.enfileirar("Ronaldo")
+    print(f'{str(fila_dupla_encadeada_teste.valores())} {OKBLUE} Tamanho da FIla: {len(fila_dupla_encadeada_teste)}{ENDC}')
+
+    print(f'\n{HEADER}Teste Nº 2 (Inserções no início): {ENDC}')
+    fila_dupla_encadeada_teste.enfileirar_inicio("Siqueira")
+    print(f'{str(fila_dupla_encadeada_teste.valores())}')
+    fila_dupla_encadeada_teste.enfileirar_inicio("Roberto")
+    print(f'{str(fila_dupla_encadeada_teste.valores())} {OKBLUE} Tamanho da FIla: {len(fila_dupla_encadeada_teste)}{ENDC}')
+
+    print(f'\n{HEADER}Teste Nº 3 (Ler Início e Fim): {ENDC}')
+    print(f'Valor no início: {OKGREEN}{fila_dupla_encadeada_teste.ler_inicio()}{ENDC}\n'
+          f'Valor do fim: {OKGREEN}{fila_dupla_encadeada_teste.ler_final()}{ENDC}')
+    print(f'{str(fila_dupla_encadeada_teste.valores())} {OKBLUE} Tamanho da FIla: {len(fila_dupla_encadeada_teste)}{ENDC}')
+
+    print(f'\n{HEADER}Teste Nº 4 (Vazia): {ENDC}')
+    if fila_dupla_encadeada_teste.vazia():
+        print('A fila ESTÁ vazia!')
+    else:
+        print('A fila NÃO está vazia!')
+    print(f'{str(fila_dupla_encadeada_teste.valores())} {OKBLUE} Tamanho da FIla: {len(fila_dupla_encadeada_teste)}{ENDC}')
+
+    print(f'\n{HEADER}Teste Nº 5 (Remoção no final): {ENDC}')
+    print(f'{OKGREEN}{fila_dupla_encadeada_teste.desenfileirar_final()} removido!{ENDC}')
+    print(f'{str(fila_dupla_encadeada_teste.valores())}')
+    print(f'{OKGREEN}{fila_dupla_encadeada_teste.desenfileirar_final()} removido!{ENDC}')
+    print(f'{str(fila_dupla_encadeada_teste.valores())} {OKBLUE} Tamanho da FIla: {len(fila_dupla_encadeada_teste)}{ENDC}')
+
+    print(f'\n{HEADER}Teste Nº 6 (Remoção no início): {ENDC}')
+    print(f'{OKGREEN}{fila_dupla_encadeada_teste.desenfileirar()} removido!{ENDC}')
+    print(f'{str(fila_dupla_encadeada_teste.valores())}')
+    print(f'{OKGREEN}{fila_dupla_encadeada_teste.desenfileirar()} removido!{ENDC}')
+    print(f'{str(fila_dupla_encadeada_teste.valores())} {OKBLUE} Tamanho da FIla: {len(fila_dupla_encadeada_teste)}{ENDC}')
+
+    print(f'\n{HEADER}Teste Nº 7 (Erro de remoção): {ENDC}')
+    print(f'{OKGREEN}{fila_dupla_encadeada_teste.desenfileirar()} removido!{ENDC}')
+    fila_dupla_encadeada_teste.desenfileirar()
+    print(f'{str(fila_dupla_encadeada_teste.valores())} {OKBLUE} Tamanho da FIla: {len(fila_dupla_encadeada_teste)}{ENDC}')
