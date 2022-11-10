@@ -11,4 +11,4 @@ from codigo_fonte.utilidades.imports import *
 
 if __name__ == '__main__':
 
-    executar(arvore_binaria_de_busca)
+    executar(arvore_avl)
