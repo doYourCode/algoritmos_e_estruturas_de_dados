@@ -27,7 +27,7 @@ class Nodo:
         self.filho_direita = None
 
 
-class ArvoreAvl():
+class ArvoreAvl:
     """ Representa uma árvore binária balanceada e as operações sobre ela """
 
     def __init__(self):
@@ -267,11 +267,12 @@ class ArvoreAvl():
                 nodo_pai.filho_direita = nodo
 
     def altura(self, nodo):
-        '''
-        Função para retornar a altura da árvore
+        """
+        Função para retornar a altura de um nó, retornando a altura da árvore caso use a raiz
 
-        :return: Alturo em que a árvore se encontra
-        '''
+        :param nodo: Nó pertencente à árvore.
+        :return: Altura do nó
+        """
         if not nodo:
             return 0
 
@@ -350,6 +351,15 @@ class ArvoreAvl():
 
         return nodo_atual
 
+    def ler_no(self, nodo):
+        """
+        Lê os dados dentro do nó
+
+        :param nodo: Nó a ser lido
+        :return: Registro do nó lido
+        """
+        return nodo.registro
+
     def vazia(self):
         """
         Testa se a árvore está vazia
@@ -361,36 +371,38 @@ class ArvoreAvl():
         return False
 
     def folhas(self, atual):
-        '''
+        """
         Função para mostrar quantas "folhas" tem na árvore
 
-        :return: Quantidade de subárvores
-        '''
+        :param atual: Nó raiz
+        :return: Todas as folhas a partir do nó raiz.
+        """
         if atual is None:
             return 0
         if atual.filho_esquerda is None and atual.filho_direita is None:
             return 1
         return self.folhas(atual.filho_esquerda) + self.folhas(atual.filho_direita)
 
-    def contarNos(self, atual):
-        '''
+    def contar_nos(self, atual):
+        """
         Função para contar quantos nós foram criados
 
-        :return: Quantidade de nós
-        '''
+        :param atual: Nó raiz
+        :return: Quantidade de nós a partir do nó raiz
+        """
         if atual is None:
             return 0
         else:
-            return 1 + self.contarNos(atual.filho_esquerda) + self.contarNos(atual.filho_direita)
+            return 1 + self.contar_nos(atual.filho_esquerda) + self.contar_nos(atual.filho_direita)
 
     def caminhar(self):
-        '''
+        """
         Função para ler a árvore
 
         :return: Altura da árvore, quantidade de subárvores e quantidade de nós
-        '''
+        """
         print(f'{OKBLUE}Registro da Raíz: {self.raiz.registro}')
         print(f'Altura da arvore: {self.altura(self.raiz)}')
         print(f'Quantidade de folhas: {self.folhas(self.raiz)}')
-        print(f'Quantidade de Nós: {self.contarNos(self.raiz)}{ENDC}')
+        print(f'Quantidade de Nós: {self.contar_nos(self.raiz)}{ENDC}')
         print(f'--'*20)
