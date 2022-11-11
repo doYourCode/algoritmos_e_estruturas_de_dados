@@ -186,7 +186,7 @@ class ArvoreBinariaDeBusca:
         :return: Altura do nó
         """
         if atual is None or atual.esq is None and atual.dir is None:
-            return 0
+            return 1
         else:
             if self.altura(atual.esq) > self.altura(atual.dir):
                 return 1 + self.altura(atual.esq)
