@@ -11,8 +11,8 @@ __credits__ = ["https://www.geeksforgeeks.org/introduction-to-graphs/?ref=lbp",
                "https://www.educba.com/graph-in-data-structure/?source=leftnav",
                "https://www.educba.com/types-of-graph-in-data-structure/"]
 __license__ = "GPL"
-__email__ = ["caio.lamas@ifnmg.edu.br",
-             "fasr@aluno.ifnmg.edu.br"]
+__email__ = ["fasr@aluno.ifnmg.edu.br",
+             "caio.lamas@ifnmg.edu.br"]
 
 from codigo_fonte.utilidades.utilidades import *
 

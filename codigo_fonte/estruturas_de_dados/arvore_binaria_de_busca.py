@@ -12,7 +12,7 @@ from codigo_fonte.utilidades.utilidades import *
 
 class No:
     def __init__(self, chave=None):
-        '''Contrutor para iniciar o nó'''
+        """Contrutor para iniciar o nó"""
         self.item = chave
         self.dir = None
         self.esq = None
@@ -20,7 +20,7 @@ class No:
 
 class ArvoreBinariaDeBusca:
     def __init__(self):
-        '''Construtor para iniciar a árvore'''
+        """Construtor para iniciar a árvore"""
 
         self.raiz = None
 
@@ -29,11 +29,11 @@ class ArvoreBinariaDeBusca:
         return [nodo.item for nodo in self]"""
 
     def inserir(self, v):
-        '''
+        """
         Função para criar um novo nó
 
         :param v: Informação que será armazenada
-        '''
+        """
         novo = No(v)
 
         if self.raiz is None:
@@ -59,11 +59,11 @@ class ArvoreBinariaDeBusca:
                 # fim da condição ir a direita
 
     def buscar(self, chave):
-        '''
+        """
         Função para buscar um nó através de sua chave
 
         :return: Informação encontrada | None caso não encontrar
-        '''
+        """
 
         if self.raiz is None:
             print(f'{FAIL}Árvore vazia!{ENDC}')
@@ -82,12 +82,12 @@ class ArvoreBinariaDeBusca:
         return atual
 
     def nosucessor(self, no):
-        '''
+        """
         O sucessor é o Nó mais a esquerda da subarvore a direita do Nó que foi passado como parametro do método
 
         :param no: Nó pertencente a arvore
         :return: Sucessor mais próximo do nó recebido
-        '''
+        """
 
         sucessor = no.dir
 
@@ -109,11 +109,11 @@ class ArvoreBinariaDeBusca:
         return pai
 
     def remover(self, v):
-        '''
+        """
         Função para remover um elemento da Árvore
 
         :param v: Informação que será removida
-        '''
+        """
 
         if self.raiz is None:
             print(f'{WARNING}Árvore Vazia!{ENDC}')
@@ -179,13 +179,14 @@ class ArvoreBinariaDeBusca:
         return True
 
     def altura(self, atual):
-        '''
-        Função para retornar a altura da árvore
+        """
+        Função para retornar a altura de um nó, retornando a altura da árvore caso use a raiz
 
-        :return: Alturo em que a árvore se encontra
-        '''
+        :param atual: Nó pertencente à árvore.
+        :return: Altura do nó
+        """
         if atual is None or atual.esq is None and atual.dir is None:
-            return 0
+            return 1
         else:
             if self.altura(atual.esq) > self.altura(atual.dir):
                 return 1 + self.altura(atual.esq)
@@ -193,37 +194,39 @@ class ArvoreBinariaDeBusca:
                 return 1 + self.altura(atual.dir)
 
     def folhas(self, atual):
-        '''
+        """
         Função para mostrar quantas "folhas" tem na árvore
 
-        :return: Quantidade de subárvores
-        '''
+        :param atual: Nó raiz
+        :return: Todas as folhas a partir do nó raiz.
+        """
         if atual is None:
             return 0
         if atual.esq is None and atual.dir is None:
             return 1
         return self.folhas(atual.esq) + self.folhas(atual.dir)
 
-    def contarNos(self, atual):
-        '''
+    def contar_nos(self, atual):
+        """
         Função para contar quantos nós foram criados
 
-        :return: Quantidade de nós
-        '''
+        :param atual: Nó raiz
+        :return: Quantidade de nós a partir do nó raiz
+        """
         if atual is None:
             return 0
         else:
-            return 1 + self.contarNos(atual.esq) + self.contarNos(atual.dir)
+            return 1 + self.contar_nos(atual.esq) + self.contar_nos(atual.dir)
 
     def caminhar(self):
-        '''
+        """
         Função para ler a árvore
 
         :return: Altura da árvore, quantidade de subárvores e quantidade de nós
-        '''
+        """
         print('Altura da arvore: %d' % (self.altura(self.raiz)))
         print('Quantidade de folhas: %d' % (self.folhas(self.raiz)))
-        print('Quantidade de Nós: %d' % (self.contarNos(self.raiz)))
+        print('Quantidade de Nós: %d' % (self.contar_nos(self.raiz)))
 
     """def _percorre_arvore(self, nodo):
         if not nodo:
@@ -236,5 +239,3 @@ class ArvoreBinariaDeBusca:
     def __iter__(self):
         for nodo in self._percorre_arvore(self.raiz):
             yield nodo"""
-
-
