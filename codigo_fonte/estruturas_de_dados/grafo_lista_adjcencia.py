@@ -7,7 +7,7 @@ Aviso: Implementação de um grafo NÃO ORIENTADO
 """
 __author__ = 'Franck ALlyson da Silva Rocha'
 __date__ = '10/11/2022'
-__cretids__ = ''
+__credits__ = ''
 __license__ = 'GPL'
 __email__ = 'fasr@aluno.ifnmg.edu.br'
 
