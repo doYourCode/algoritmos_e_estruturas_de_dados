@@ -11,4 +11,4 @@ from codigo_fonte.utilidades.imports import *
 
 if __name__ == '__main__':
 
-    executar(arvore_avl)
+    executar(grafo_lista_adjacencia)
