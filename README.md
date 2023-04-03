@@ -7,6 +7,7 @@
 
 <h3>Conteúdo</h3>
 <p align="justify">Atualmente o repositório contém exemplos de implementação das seguintes estruturas de dados:</p>
+<p>
 - Árvore AVL  <br>
 - Árvore binária de busca (BST) <br>
 - Fila <br>
@@ -23,6 +24,7 @@
 - Pilha (com nós encadeados) <br>
 - Tabela hash <br>
 - Tabela hash (com nós encadeados) <br>
+</p>
 
 <p align="justify">Os seguintes exemplos de uso:</p>
 - Ordenação de processamento em batch (first-in, first-out) <br>
@@ -34,3 +36,11 @@
 - Algoritmos de transposição de árvores e grafos
 - Algoritmos de busca
 - Exemplos comuns de uso
+
+<h3>Principais contribuíntes</h3>
+
+<p>
+[Franck Allyson](https://github.com/franckallyson) <br>
+[Everton Sousa Oliveira](https://github.com/Evertonsousa3) <br>
+</p>
+
