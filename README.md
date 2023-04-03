@@ -33,9 +33,9 @@
 <h3>Planos futuros</h3>
 <p align="justify">Pretendemos incluir os seguintes conteúdos:</p>
 - Algoritmos de ordenação <br>
-- Algoritmos de transposição de árvores e grafos
-- Algoritmos de busca
-- Exemplos comuns de uso
+- Algoritmos de transposição de árvores e grafos <br>
+- Algoritmos de busca <br>
+- Exemplos comuns de uso <br>
 
 <h3>Principais contribuíntes</h3>
 
