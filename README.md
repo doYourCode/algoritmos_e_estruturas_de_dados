@@ -1,6 +1,6 @@
 <h1>Algoritmos e Estruturas de Dados</h1>
 <h3>Página do projeto</h3>
-<a url="doyourcode.github.io/aeds.doc/">doyourcode.github.io/aeds.doc</a>
+<a href="doyourcode.github.io/aeds.doc/">doyourcode.github.io/aeds.doc</a>
 <h3>Exemplos e exercícios de algoritmos e estruturas de dados em Python</h3>
 <p align="justify">Este repositório tem como objetivo reunir materiais de estudo, referências e código fonte para apoiar o aprendizado de algoritmos e estruturas de dados. A proposta é construir um corpo de conhecimento colaborativo entre professores e estudantes do curso de Sistemas de Informação do Instituto Federal de Educação, Ciência e Tecnologia do Norte de Minas Gerais <i>campus</i> Salinas.</p>
 <p align="justify">A iniciativa para a criação deste repositório partiu da necessidade de organizar e disponibilizar exemplos simples e didáticos de implementação de classes, snippets, etc., para auxiliar o trabalho conjunto de professores e estudantes envolvidos em pesquisa sobre aprendizagem colaborativa da temática de algoritmos e estruturas de dados.</p>
