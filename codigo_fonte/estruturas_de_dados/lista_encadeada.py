@@ -1,4 +1,4 @@
-""" Exemplo de estrutura de lista encadeada simples e alguns algoritmos relacionados.
+''' Exemplo de estrutura de lista encadeada simples e alguns algoritmos relacionados.
 Essa estrutura se trata de uma sequência de nodos ligados, ou encadeadas, uns aos outros por uma referência.
 Os nodos de uma lista encadeada são compostas de dois elementos cada. O primeiro elemento é o dado
 efetivo a ser armazenado e o segundo se trata de uma referência para o próximo elemento da lista. A lista
@@ -6,7 +6,7 @@ encadeada simples só poderá ser transcorrida em um sentido, do início ao fim.
 A principal vantagem da utilização de listas encadeadas sobre listas sequenciais é o ganho em desempenho
 nas inclusões e remoções de elementos. Entretanto, para acessar um item da lista é
 necessário transcorrê-la em partes, ou no pior caso, percorrer a lista inteira.
-"""
+'''
 __author__ = "Caio Henriques Sica Lamas"
 __date__ = "14/08/2022"
 __credits__ = ["https://www.tutorialspoint.com/python_data_structure/python_linked_lists.htm",
