@@ -5,6 +5,16 @@ __date__ = "16/08/2022"
 __license__ = "GPL"
 __email__ = "caio.lamas@ifnmg.edu,br"
 
+from codigo_fonte.estruturas_de_dados.testes.testes_listas import *
+from codigo_fonte.estruturas_de_dados.testes.testes_filas import *
+from codigo_fonte.estruturas_de_dados.testes.testes_pilhas import *
+from codigo_fonte.estruturas_de_dados.testes.testes_hash import *
+from codigo_fonte.estruturas_de_dados.testes.testes_grafos import *
+from codigo_fonte.estruturas_de_dados.testes.testes_arvores import *
+
+from exemplos.escalonamento.processos_fifo_batch import *
+from exemplos.escalonamento.processos_sjf_batch import *
+
 
 def executar(func):
     """ Executa o teste/exemplo inserido na lista de parâmetros.
