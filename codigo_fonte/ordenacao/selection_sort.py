@@ -19,6 +19,12 @@ __credits__ = ["https://algoritmosempython.com.br/cursos/algoritmos-python/estru
 __license__ = "GPL"
 __email__ = "tmb5@aluno.ifnmg.edu.br, jpc3@aluno.ifnmg.edu.br, caio.lamas@ifnmg.edu.br" 
 
+### COMENTÁRIO DO PROFESSOR:
+# Não precisa reimplementar a lista encadeada, poderia ter usado a que já existe no repositório. Para isso basta criar a
+# função selection_sort separadamente e receber a lista como parâmrtro da função. Por que? Para garantir a reutilização
+# do código / não duplicação de código que seja igual ou semelhante, ou que faça a mesma coisa, dentro da mesma base
+# de códigos.
+
 class Nodo:
     def __init__(self, valor): # # Construtor para inicializar o objeto nó
         self.valor = valor
@@ -32,7 +38,12 @@ class ListaEncadeada: # classe da lista encadeada
         novo_nodo = Nodo(novo_valor) # cria um novo nó
         novo_nodo.proximo = self.cabeca # o novo nó passa a ser a cabeça da lista.
         self.cabeca = novo_nodo # cabeça da lista recebe novo nó
-        
+
+### COMENTÁRIO DO PROFESSOR:
+# é aqui mesmo que você vai manter, mas em vez de receber self, vai receber o objeto da lista encadeada como
+# parâmetro, não precisa usar ABC, mas poderia para garantir a tipagem correta e polimorfismos, mas isso pode ser
+# em outra oportunidade.
+
     def selection_sort(self): # funçao Selection Sort
         # Caso base
         if self.cabeca is None:
@@ -58,6 +69,7 @@ class ListaEncadeada: # classe da lista encadeada
         # Verifica se a lista está vazia.
         return self.cabeca is None
 
+
 lista_encadeada = ListaEncadeada()
 lista_encadeada.adicionar(4)
 lista_encadeada.adicionar(2)
@@ -74,6 +86,3 @@ lista_ordenada = lista_encadeada.selection_sort()
 while lista_ordenada:
     print(lista_ordenada.valor)
     lista_ordenada = lista_ordenada.proximo
-
-
-
