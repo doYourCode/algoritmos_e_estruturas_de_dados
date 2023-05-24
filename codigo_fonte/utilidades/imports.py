@@ -12,6 +12,8 @@ from codigo_fonte.estruturas_de_dados.testes.testes_hash import *
 from codigo_fonte.estruturas_de_dados.testes.testes_grafos import *
 from codigo_fonte.estruturas_de_dados.testes.testes_arvores import *
 
+from codigo_fonte.ordenacao.testes import *
+
 from exemplos.escalonamento.processos_fifo_batch import *
 from exemplos.escalonamento.processos_sjf_batch import *
 

@@ -38,8 +38,10 @@ def selection_sort(lista):  # funçao Selection Sort
         atual = atual.proximo
     return lista.cabeca
 
-
+# COMENTÁRIO DO PROFESSOR:
+# Esse trecho vai para o arquivo testes.py metodo especifico pro selection sort
 minha_lista = ListaEncadeada()
+
 minha_lista.adicionar_final(4)
 minha_lista.adicionar_final(2)
 minha_lista.adicionar_final(1)
