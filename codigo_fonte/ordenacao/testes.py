@@ -7,7 +7,6 @@ def teste_selection_sort():
     num1 = input('Input  comma separated numbers:\n').strip()
     nums = [int(item) for item in num1.split(',')]
     print(selection_sort(nums))
-    pass
 
 def teste_bogo_sort():
     num1 = input('Input  comma separated numbers:\n').strip()
