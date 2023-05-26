@@ -39,7 +39,7 @@ def selection_sort(lista):  # funçao Selection Sort
     return lista.cabeca
 
 # COMENTÁRIO DO PROFESSOR:
-# Esse trecho vai para o arquivo testes.py metodo especifico pro selection sort
+# Esse trecho vai para o arquivo testes.py metodo especifico pro selection sort, olhar exemplo do bogosort
 minha_lista = ListaEncadeada()
 
 minha_lista.adicionar_final(4)

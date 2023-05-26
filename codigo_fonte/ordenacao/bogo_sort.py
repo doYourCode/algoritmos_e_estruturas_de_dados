@@ -25,10 +25,3 @@ def bogosort(nums):
         random.shuffle(nums)
         print(nums)
     return nums
-
-num1 = input('Input  comma separated numbers:\n').strip()
-nums = [int(item) for item in num1.split(',')]
-
-print(nums)
-
-print(bogosort(nums))
