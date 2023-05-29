@@ -1,41 +1,44 @@
+_author__ = ["Everton Sousa Oliveira",
+             "Jônatas Pereira da Rocha",
+             "Thaylon Ramon Ramos Ribeiro",
+             "Gregory Almeida SilvaGregory Almeida Silva",
+             "Caio Henriques Sica Lamas"]
+__date__ = "28/05/2023"
+__credits__ = [""]
+__license__ = "GPL"
+__email__ = "eso@aluno.ifnmg.edu.br, caio.lamas@ifnmg.edu.br"
+
 class FilaPrioridade:
-    def __init__(self):
-        self.fila_prioridade = []
-
-    def esta_vazia(self):
-        return len(self.fila_prioridade) == 0
-
-    def inserir(self, item, prioridade):
-        elemento = (item, prioridade)
-        if self.esta_vazia():
-            self.fila_prioridade.append(elemento)
-        else:
-            inserido = False
-            for i in range(len(self.fila_prioridade)):
-                if self.fila_prioridade[i][1] > prioridade:
-                    self.fila_prioridade.insert(i, elemento)
-                    inserido = True
-                    break
-            if not inserido:
-                self.fila_prioridade.append(elemento)
+    def __init__(self, tamanho_maximo):
+        self.fila_teste = []
+        self.tamanho_maximo = tamanho_maximo
 
     def remover(self):
-        if len(self.fila_prioridade) == 0:
-            print("Fila vazia!")
-            return None
-        else:
-            elemento = self.fila_prioridade[0]
-            self.fila_prioridade.pop(0)
-            return elemento
+        if self.estaVazia():
+            raise IndexError("A fila está vazia.")
 
-    def ler_inicio(self):
-        return self.fila_prioridade[0]
+        valor_removido = self.fila_teste[0]
+        del self.fila_teste[0]
 
-    def ler_final(self):
-        return self.fila_prioridade[len(self.fila_prioridade)-1]
+        return valor_removido
 
-    def __str__(self):
-        return ' '.join([str(i) for i in self.fila_prioridade])
+    def adicionar(self, valor):
+        if self.estaCheia():
+            print("A fila está cheia. Não é possível adicionar o elemento.")
+            exit(-1)
+        self.fila_teste.append(valor)
+        self.fila_teste.sort(reverse=True)
 
-    def __len__(self):
-        return len(self.fila_prioridade)
+    def peek(self):
+        if self.estaVazia():
+            raise IndexError("A fila está vazia.")
+        return self.fila_teste[0]
+
+    def tamanho(self):
+        return len(self.fila_teste)
+
+    def estaVazia(self):
+        return self.tamanho() == 0
+
+    def estaCheia(self):
+        return self.tamanho() == self.tamanho_maximo
