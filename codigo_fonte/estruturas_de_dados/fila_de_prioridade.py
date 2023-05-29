@@ -1,1 +1,44 @@
-# TODO
+_author__ = ["Everton Sousa Oliveira",
+             "Jônatas Pereira da Rocha",
+             "Thaylon Ramon Ramos Ribeiro",
+             "Gregory Almeida SilvaGregory Almeida Silva",
+             "Caio Henriques Sica Lamas"]
+__date__ = "28/05/2023"
+__credits__ = [""]
+__license__ = "GPL"
+__email__ = "eso@aluno.ifnmg.edu.br, caio.lamas@ifnmg.edu.br"
+
+class FilaPrioridade:
+    def __init__(self, tamanho_maximo):
+        self.fila_teste = []
+        self.tamanho_maximo = tamanho_maximo
+
+    def remover(self):
+        if self.estaVazia():
+            raise IndexError("A fila está vazia.")
+
+        valor_removido = self.fila_teste[0]
+        del self.fila_teste[0]
+
+        return valor_removido
+
+    def adicionar(self, valor):
+        if self.estaCheia():
+            print("A fila está cheia. Não é possível adicionar o elemento.")
+            exit(-1)
+        self.fila_teste.append(valor)
+        self.fila_teste.sort(reverse=True)
+
+    def peek(self):
+        if self.estaVazia():
+            raise IndexError("A fila está vazia.")
+        return self.fila_teste[0]
+
+    def tamanho(self):
+        return len(self.fila_teste)
+
+    def estaVazia(self):
+        return self.tamanho() == 0
+
+    def estaCheia(self):
+        return self.tamanho() == self.tamanho_maximo
