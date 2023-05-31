@@ -1,8 +1,7 @@
 _author__ = ["Everton Sousa Oliveira",
              "Jônatas Pereira da Rocha",
              "Thaylon Ramon Ramos Ribeiro",
-             "Gregory Almeida SilvaGregory Almeida Silva",
-             "Caio Henriques Sica Lamas"]
+             "Gregory Almeida SilvaGregory Almeida Silva"]
 __date__ = "28/05/2023"
 __credits__ = [""]
 __license__ = "GPL"
@@ -27,7 +26,7 @@ class FilaPrioridade:
             print("A fila está cheia. Não é possível adicionar o elemento.")
             exit(-1)
         self.fila_teste.append(valor)
-        self.fila_teste.sort(reverse=True)
+        self.fila_teste.sort(reverse=True) # Vou verificar se o procedimento é esse mesmo, entro em contato
 
     def peek(self):
         if self.estaVazia():
