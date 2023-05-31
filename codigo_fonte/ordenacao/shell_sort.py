@@ -13,7 +13,7 @@ __license__ = "GPL"
 __email__ = "msg2@aluno.ifnmg.edu.br, jefs1@aluno.ifnmg.edu.br, gbsf@aluno.ifnmg.edu.br"
 
 # COMENTÁRIOS DO PROFESSOR (FAVOR APAGAR ISSO APÓS CORREÇÃO)
-# a docstring, pra funcionar, tem que vir acima do nome da função, e objetiva informar o que a função faz, qual
+# a docstring, pra funcionar, tem que vir logo abaixo do nome da função, e objetiva informar o que a função faz, qual
 # parâmetro recebe e o que entrega como retorno
 # PEP 8 E302 -> esperava 2 linhas em branco entre o cabeçalho e a docstring da função, só há uma linha
 def shell_sort(array):

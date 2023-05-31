@@ -12,8 +12,9 @@ __email__ = "caio.lamas@ifnmg.edu.br"
 
 import random
 
-def bogosort(nums):
-    def isSorted(nums):
+
+def bogo_sort(nums):
+    def is_sorted(nums):
         if len(nums) < 2:
             return True
         for i in range(len(nums) - 1):
@@ -21,7 +22,7 @@ def bogosort(nums):
                 return False
         return True
 
-    while not isSorted(nums):
+    while not is_sorted(nums):
         random.shuffle(nums)
         print(nums)
     return nums

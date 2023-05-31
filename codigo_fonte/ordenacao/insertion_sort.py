@@ -16,7 +16,10 @@ __date__ = "26/05/2023"
 __credits__ = ["https://youtu.be/S5no2qT8_xg"]
 __license__ = "GPL"
 __email__ = "ccos1@aluno.ifnmg.edu.br", "jrcj@aluno.ifnmg.edu.br", "jrs7@aluno.ifnmg.edu.br", "ahdsg@aluno.ifnmg.edu.br"
-
+# COMENTÁRIO DO PROFESSOR (APAGAR APOS CORRIGIR)
+# PEP 8 E 302 -> 2 linhas em branco entre cabeçalho e docstring da função
+# Usamos docstring na linha que sucede o nome da função, para documentar o que a função faz, seus parametros e retorno
+# esperado
 def insertion_sort(lista):
     quantidade_elementos = len(lista)
     for i in range(1, quantidade_elementos):

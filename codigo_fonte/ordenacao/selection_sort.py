@@ -14,7 +14,7 @@ __email__ = "tmb5@aluno.ifnmg.edu.br, jpc3@aluno.ifnmg.edu.br"
 # COMENTÁRIOS DO PROFESSOR (APAGAR APÓS CORRIGIR)
 # PEP 8 E 302 -> 2 linhas em branco entre cabeçalho e docstring da função
 # PEP 8 E292 -> é necessário UMA linha em branco ao final do arquivo
-# Usamos docstring na linha que antecede o nome da função, para documentar o que a função faz, seus parametros e retorno
+# Usamos docstring na linha que sucede o nome da função, para documentar o que a função faz, seus parametros e retorno
 # esperado
 # Não é necessário comentários dentro da função, apenas a docstring, favor pesquisar sobre como implementar docstring,
 # é o comentário com 3 aspas
