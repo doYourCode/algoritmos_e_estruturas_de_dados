@@ -12,8 +12,12 @@ __credits__ = ["https://www.geeksforgeeks.org/shellsort/"]
 __license__ = "GPL"
 __email__ = "msg2@aluno.ifnmg.edu.br, jefs1@aluno.ifnmg.edu.br, gbsf@aluno.ifnmg.edu.br"
 
+# COMENTÁRIOS DO PROFESSOR (FAVOR APAGAR ISSO APÓS CORREÇÃO)
+# a docstring, pra funcionar, tem que vir acima do nome da função, e objetiva informar o que a função faz, qual
+# parâmetro recebe e o que entrega como retorno
+# PEP 8 E302 -> esperava 2 linhas em branco entre o cabeçalho e a docstring da função, só há uma linha
 def shell_sort(array):
-    """gap recebe metade do valor do array"""
+    """gap recebe metade do valor do array""" # Não é necessário comentar interno à função, pode apagar todos
     gap = len(array) // 2
 
     while gap > 0:
@@ -29,8 +33,10 @@ def shell_sort(array):
         gap //= 2
 
     return array
-    """Retorna o array ordenado"""
+    """Retorna o array ordenado""" # Como mencionei, a docstring vem acima do nome da função, nos moldes acima
+    # mencionados. Pode apagar esta aqui também.
 
 
 
 
+# PEP 8 292 -> Só é necessária UMA linha em branco ao final do arquivo

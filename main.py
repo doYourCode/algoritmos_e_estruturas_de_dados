@@ -11,5 +11,4 @@ from codigo_fonte.utilidades.imports import *
 
 if __name__ == '__main__':
 
-    executar(teste_selection_sort)
-    executar(teste_bogo_sort)
+    executar_p(teste_selection_sort, [72, 13, 26, 109, 40, 1, 9])
