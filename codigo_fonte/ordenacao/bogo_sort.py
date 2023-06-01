@@ -24,5 +24,4 @@ def bogo_sort(nums):
 
     while not is_sorted(nums):
         random.shuffle(nums)
-        print(nums)
     return nums
