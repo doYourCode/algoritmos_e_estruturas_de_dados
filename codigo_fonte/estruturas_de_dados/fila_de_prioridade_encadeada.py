@@ -7,7 +7,8 @@ __email__ = 'jpr@aluno.ifnmg.edu.br'
 
 from codigo_fonte.utilidades.utilidades import *
 
-
+# COMENTÁRIO DO PROFESSOR: Fico feliz em ver que a qualidade da documentação do seu código cresceu fortemente.
+# como já disse, vou verificar o procedimento das filas de prioridade e entro em contato.
 class No:
     """ Representa um único nó de uma fila """
     def __init__(self, valor, prioridade):
