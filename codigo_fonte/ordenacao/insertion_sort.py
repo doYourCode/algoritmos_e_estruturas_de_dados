@@ -1,8 +1,6 @@
 """
 O método de ordenação Insertion Sort funciona: 
-Comparando cada elemento com cada um dos outros na esquerda dele, até que um elemento menor que ele seja encontrado.
-Se for encontrado um elemento maior que ele, move ele para a esquerda deste elemento.
-Se não for encontrado, ele continua na sua posição.
+Fazendo comparações em que o menor número sempre vá para a esquerda.
 Possui a complexidade de:
     O(n) no melhor caso.
     O(n²) no caso médio e pior caso.
@@ -16,11 +14,16 @@ __date__ = "26/05/2023"
 __credits__ = ["https://youtu.be/S5no2qT8_xg"]
 __license__ = "GPL"
 __email__ = "ccos1@aluno.ifnmg.edu.br", "jrcj@aluno.ifnmg.edu.br", "jrs7@aluno.ifnmg.edu.br", "ahdsg@aluno.ifnmg.edu.br"
-# COMENTÁRIO DO PROFESSOR (APAGAR APOS CORRIGIR)
-# PEP 8 E 302 -> 2 linhas em branco entre cabeçalho e docstring da função
-# Usamos docstring na linha que sucede o nome da função, para documentar o que a função faz, seus parametros e retorno
-# esperado
+
+
 def insertion_sort(lista):
+    """
+    Método de ordenação que compara cada elemento, a partir da segunda posição, com os outros na esquerda dele. Se for
+    encontrado um elemento maior que ele, move ele para a esquerda deste elemento. Se não for encontrado, ele continua
+    na sua posição.
+    :param lista Conjunto de elementos que serão ordenados
+    :return Conjunto de elementos ordenado
+    """
     quantidade_elementos = len(lista)
     for i in range(1, quantidade_elementos):
         atual = lista[i]
@@ -28,6 +31,8 @@ def insertion_sort(lista):
 
         while j >= 0 and lista[j] > atual:  
             lista[j + 1] = lista[j] 
-            j = j - 1 
+            j = j - 1
 
         lista[j + 1] = atual
+
+    return lista
