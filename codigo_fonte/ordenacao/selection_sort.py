@@ -11,20 +11,23 @@ __date__ = "22/05/2023"
 __credits__ = ["https://www.geeksforgeeks.org/selection-sort/"]
 __license__ = "GPL"
 __email__ = "tmb5@aluno.ifnmg.edu.br, jpc3@aluno.ifnmg.edu.br"
-# COMENTÁRIOS DO PROFESSOR (APAGAR APÓS CORRIGIR)
-# PEP 8 E 302 -> 2 linhas em branco entre cabeçalho e docstring da função
-# PEP 8 E292 -> é necessário UMA linha em branco ao final do arquivo
-# Usamos docstring na linha que sucede o nome da função, para documentar o que a função faz, seus parametros e retorno
-# esperado
-# Não é necessário comentários dentro da função, apenas a docstring, favor pesquisar sobre como implementar docstring,
-# é o comentário com 3 aspas
-def selection_sort(nums):
-    for i in range(len(nums)):
-        # Encontra o índice do menor elemento restante no subarray não ordenado
+
+
+def selection_sort(lista):
+    """
+    A função selection_sort é uma implementação do algoritmo de ordenação por seleção. Ela recebe como parâmetro uma lista de elementos 
+    e retorna a mesma lista ordenada em ordem crescente. O algoritmo funciona da seguinte maneira: para cada elemento da lista, ele procura 
+    o menor elemento à sua direita e troca de posição com ele. Isso é feito até que todos os elementos estejam ordenados.
+    :param lista O conjunto de elementos a serem ordenados
+    :return O conjunto de elementos em ordem crescente
+    """
+    for i in range(len(lista)):
         min_idx = i
-        for j in range(i + 1, len(nums)):
-            if nums[j] < nums[min_idx]:
+        
+        for j in range(i + 1, len(lista)):
+            if lista[j] < lista[min_idx]:
                 min_idx = j
-        # Troca o elemento atual com o menor elemento encontrado
-        nums[i], nums[min_idx] = nums[min_idx], nums[i]
-    return nums
+
+        lista[i], lista[min_idx] = lista[min_idx], lista[i]
+    
+    return lista
