@@ -9,7 +9,7 @@ __email__ = "eso@aluno.ifnmg.edu.br, caio.lamas@ifnmg.edu.br"
 
 # COMENTÁRIOS DO PROFESSOR (FAVOR APAGAR APÓS CORRIGIR)
 # Não implementou os testes, favor ver o arquivo testes_filas.py
-# A documentação deste arquivo não condiz com o patrão, você corrigiu isso no segundo arquivo
+# A documentação deste arquivo não condiz com o padrão, você corrigiu isso no segundo arquivo, pode por naquele formato
 class FilaPrioridade:
     def __init__(self, tamanho_maximo):
         self.fila_teste = []
