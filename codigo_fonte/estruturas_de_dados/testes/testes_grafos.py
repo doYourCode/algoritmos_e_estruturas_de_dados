@@ -1,6 +1,9 @@
 from codigo_fonte.utilidades.utilidades import *
 from codigo_fonte.estruturas_de_dados.grafo import Grafo
-from codigo_fonte.estruturas_de_dados.grafo_lista_adjcencia import GrafoListaAdjacencia
+from codigo_fonte.estruturas_de_dados.grafo_lista_adjacencia import GrafoListaAdjacencia
+from codigo_fonte.estruturas_de_dados.grafo_matriz_adjacencia import GrafoMatrizAdjacencia
+
+import os
 
 
 def grafo():
@@ -118,3 +121,14 @@ def grafo_lista_adjacencia():
     grafo_teste.dividir_vertices(4, 5)
     print(f'{HEADER}Teste Nº 7 (Erros): {ENDC}')
     print(f'{OKBLUE}{grafo_teste} \nQuantidade de vértices: {len(grafo_teste)}\n\n{ENDC}')
+
+
+def grafo_matriz_adjacencia():
+    g = Grafo(5)
+    g.adicionar_aresta(0, 1)
+    g.adicionar_aresta(0, 2)
+    g.adicionar_aresta(1, 2)
+    g.adicionar_aresta(2, 0)
+    g.adicionar_aresta(2, 3)
+
+    g.imprimir_matriz()

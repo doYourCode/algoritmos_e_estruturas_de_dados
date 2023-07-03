@@ -1,0 +1,39 @@
+{
+  "vertices":
+  [
+    {
+      "nome": "A",
+      "pos": [16, 32],
+      "arestas":
+      [
+        { "nome": "B", "peso": 2 },
+        { "nome": "C", "peso": 5 }
+      ]
+    },
+    {
+      "nome": "B",
+      "pos": [32, 48],
+      "arestas":
+      [
+        { "nome": "A", "peso": 2 },
+        { "nome": "D", "peso": 6 }
+      ]
+    },
+    {
+      "nome": "C",
+      "pos": [32, 64],
+      "arestas":
+      [
+        { "nome": "A", "peso": 5 }
+      ]
+    },
+    {
+      "nome": "D",
+      "pos": [64, 64],
+      "arestas":
+      [
+        { "nome": "B", "peso": 6 }
+      ]
+    }
+  ]
+}
