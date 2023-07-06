@@ -11,8 +11,8 @@ from codigo_fonte.utilidades.utilidades import *
 # como já disse, vou verificar o procedimento das filas de prioridade e entro em contato.
 class No:
     """ Representa um único nó de uma fila """
-    def __init__(self, valor, prioridade):
-        self.valor = valor
+    def __init__(self, dados, prioridade):
+        self.dados = dados
         self.prioridade = prioridade
         self.proximo = None
 

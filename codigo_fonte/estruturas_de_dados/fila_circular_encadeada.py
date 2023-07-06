@@ -17,8 +17,8 @@ from codigo_fonte.utilidades.utilidades import *
 class Nodo:
     """Representa um nó de uma fila"""
 
-    def __init__(self, valor=None):
-        self.valor = valor
+    def __init__(self, dados=None):
+        self.dados = dados
         self.proximo = None
 
 

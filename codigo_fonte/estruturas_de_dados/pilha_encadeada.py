@@ -21,8 +21,8 @@ from codigo_fonte.utilidades.utilidades import *
 class Nodo:
     """ Representa um único nó de uma lista """
 
-    def __init__(self, valor=None):
-        self.valor = valor
+    def __init__(self, dados=None):
+        self.dados = dados
         self.anterior = None
 
 

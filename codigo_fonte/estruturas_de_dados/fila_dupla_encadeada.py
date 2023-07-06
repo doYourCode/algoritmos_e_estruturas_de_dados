@@ -15,13 +15,13 @@ from codigo_fonte.utilidades.utilidades import *
 
 class Nodo:
     """Representa um único nó de uma lista"""
-    def __init__(self, valor):
+    def __init__(self, dados):
         """
         Construtor
 
         :param valor: Representa o valor que será armazenado no nó
         """
-        self.valor = valor
+        self.dados = dados
         self.proximo = None
         self.anterior = None
 
