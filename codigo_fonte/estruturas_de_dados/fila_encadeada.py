@@ -44,7 +44,7 @@ class FilaEncadeada:
 
         :return: Lista com o valor de cada nó
         '''
-        return [nodo.valor for nodo in self]
+        return [nodo.dados for nodo in self]
 
     def adicionar(self, valor):
         '''
@@ -67,7 +67,7 @@ class FilaEncadeada:
         :return:Valor do nó que está no inicio da fila
         '''
         nodo_inicio = self.inicio
-        return nodo_inicio.valor
+        return nodo_inicio.dados
 
     def ler_final(self):
         '''
@@ -76,7 +76,7 @@ class FilaEncadeada:
         :return: Valor do nó que está no fim da fila
         '''
         nodo_final = self.final
-        return nodo_final.valor
+        return nodo_final.dados
 
     def remover(self):
         '''
@@ -89,7 +89,7 @@ class FilaEncadeada:
             return
 
         nodo_inicio = self.inicio
-        valor = nodo_inicio.valor
+        valor = nodo_inicio.dados
         self.inicio = nodo_inicio.proximo
         self._tamanho -= 1
         return valor

@@ -62,8 +62,8 @@ def lista_duplamente_encadeada():
     print(f"{str(lista.valores)} {OKBLUE} +  Tamanho da lista: {str(len(lista))} {ENDC}")
 
     print(f"{HEADER} Teste nº 3 (Busca):  {ENDC}")
-    print(lista.buscar("Quarta").valor)
-    print(lista.buscar("Sexta").valor)
+    print(lista.buscar("Quarta").dados)
+    print(lista.buscar("Sexta").dados)
     print(f"{str(lista.valores)} {OKBLUE} +  Tamanho da lista: {str(len(lista))} {ENDC}")
 
     print(f"{HEADER} Teste nº 4 (Erros):  {ENDC}")

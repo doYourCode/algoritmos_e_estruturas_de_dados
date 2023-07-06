@@ -1,24 +1,22 @@
+import math
 
 
 class Nodo:
 
-    def __init__(self, nome: str, valor=None):
+    def __init__(self, nome: str, dados: dict = None):
         self.nome = nome
-        self.valor = valor
+        self.dados = dados
         self.arestas = list()
-
-    def __repr__(self):
-        return f"nome:{self.nome} valor:{self.valor} arestas:{self.arestas}\n"
 
 
 class Aresta:
 
-    def __init__(self, outro: Nodo, custo: int):
+    def __init__(self, origem: Nodo, outro: Nodo, custo: int):
+
+        self.origem = origem
         self.outro = outro
         self.custo = custo
-
-    def __repr__(self):
-        return f"outro:{self.outro.nome} custo:{self.custo}"
+        self.distancia = math.sqrt(pow((origem.dados["x"] - outro.dados["x"]), 2) + pow((origem.dados["x"] - outro.dados["x"]), 2))
 
 
 class GrafoListaAdjacenciaAlt:
@@ -26,16 +24,12 @@ class GrafoListaAdjacenciaAlt:
     def __init__(self):
         self.nodos = dict()
 
-    def adicionar_nodo(self, nome: str, valor=None):
-        n = Nodo(nome, valor)
+    def adicionar_nodo(self, nome: str, dados: dict = None):
+        n = Nodo(nome, dados)
         self.nodos.update({nome: n})
 
     def adicionar_aresta(self, nome: str, outro: str, custo: int, directional: bool = False):
-
         if not directional:
-            self.nodos[outro].arestas.append(Aresta(self.nodos[nome], custo))
+            self.nodos[outro].arestas.append(Aresta(self.nodos[outro], self.nodos[nome], custo))
 
-        self.nodos[nome].arestas.append(Aresta(self.nodos[outro], custo))
-
-    def imprimir_grafo(self):
-        print(self.nodos)
+        self.nodos[nome].arestas.append(Aresta(self.nodos[nome], self.nodos[outro], custo))

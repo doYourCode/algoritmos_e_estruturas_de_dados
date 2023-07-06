@@ -42,7 +42,7 @@ class PilhaEncadeada:
 
         :return: lista com o valor que cada nó da pilha
         '''
-        return [nodo.valor for nodo in self]
+        return [nodo.dados for nodo in self]
 
     def adicionar(self, valor):
         '''
@@ -62,7 +62,7 @@ class PilhaEncadeada:
         :return: Valor do nó do topo da pilha
         '''
         nodo_topo = self.topo
-        return nodo_topo.valor
+        return nodo_topo.dados
 
     def remover(self):
         '''
@@ -75,7 +75,7 @@ class PilhaEncadeada:
             return
 
         nodo_topo = self.topo
-        valor = nodo_topo.valor
+        valor = nodo_topo.dados
         self.topo = nodo_topo.anterior
         self._tamanho -= 1
 

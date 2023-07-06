@@ -29,7 +29,7 @@ class FilaPrioridade:
     @property
     def valores(self):
         """ Conjunto contendo todos os nós. """
-        return [no.valor for no in self]
+        return [no.dados for no in self]
 
     def esta_vazia(self):
         """ Verifica se a fila está vazia. """
@@ -62,7 +62,7 @@ class FilaPrioridade:
         if self.esta_vazia():
             print(FAIL + "ATENÇÃO!" + ENDC + " Fila Vazia! Exclusão não ocorreu.")
             return
-        valor = self.cabeca.valor
+        valor = self.cabeca.dados
         self.cabeca = self.cabeca.proximo
         self._tamanho -= 1
         return valor

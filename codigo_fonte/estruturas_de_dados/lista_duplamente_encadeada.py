@@ -49,7 +49,7 @@ class ListaDuplamenteEncadeada:
 
         :return: Lista com o valor armazenado em cada nó.
         """
-        return [nodo.valor for nodo in self]
+        return [nodo.dados for nodo in self]
 
     def adicionar_inicio(self, valor):
         """
@@ -115,12 +115,12 @@ class ListaDuplamenteEncadeada:
         """
         nodo_temp = self.cabeca
         # Se o nó a ser excluído for a cabeça da lista
-        if nodo_temp is not None and nodo_temp.valor == valor:
+        if nodo_temp is not None and nodo_temp.dados == valor:
             self.cabeca = nodo_temp.proximo
             self._tamanho -= 1
             return
         else:
-            while nodo_temp is not None and nodo_temp.valor != valor:
+            while nodo_temp is not None and nodo_temp.dados != valor:
                 nodo_temp = nodo_temp.proximo
             if nodo_temp is None:
                 print(FAIL + "ATENÇÃO!" + ENDC + " Nó '" + str(valor) + "' não foi encontrado! Exclusão não ocorreu.")
@@ -136,7 +136,7 @@ class ListaDuplamenteEncadeada:
         :return: Nó encontrado | None caso não encontrar
         """
         for nodo in self:
-            if nodo.valor == valor:
+            if nodo.dados == valor:
                 return nodo
         return None
 

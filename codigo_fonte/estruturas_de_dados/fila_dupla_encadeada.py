@@ -43,9 +43,9 @@ class FilaDuplaEncadeada:
         :return: Lista com o valores de cada nó da fila
         """
         if reverso:
-            return [nodo.valor for nodo in reversed(self)]
+            return [nodo.dados for nodo in reversed(self)]
         else:
-            return [nodo.valor for nodo in self]
+            return [nodo.dados for nodo in self]
 
     def enfileirar(self, valor):
         """
@@ -97,7 +97,7 @@ class FilaDuplaEncadeada:
             print(FAIL + "ATENÇÃO!" + ENDC + " Fila Vazia! Exclusão não ocorreu.")
             return
 
-        valor_removido = self._inicio.valor
+        valor_removido = self._inicio.dados
         self._inicio.anterior = None
         self._inicio = self._inicio.proximo
         self._tamanho -= 1
@@ -113,7 +113,7 @@ class FilaDuplaEncadeada:
             print(FAIL + "ATENÇÃO!" + ENDC + " Fila Vazia! Exclusão não ocorreu.")
             return
 
-        valor_removido = self._final.valor
+        valor_removido = self._final.dados
         self._final = self._final.anterior
         self._final.proximo = None
         self._tamanho -= 1
@@ -125,7 +125,7 @@ class FilaDuplaEncadeada:
 
         :return: Valor do nó do início da fila
         """
-        return self._inicio.valor
+        return self._inicio.dados
 
     def ler_final(self):
         """
@@ -133,7 +133,7 @@ class FilaDuplaEncadeada:
 
         :return: Valor do nó do final da fila
         """
-        return self._final.valor
+        return self._final.dados
 
     def vazia(self):
         """

@@ -40,7 +40,7 @@ class FilaCircularEncadeada:
 
         :return: Conjunto de valores presentes em cada nó da fila
         """
-        return [nodo.valor for nodo in self]
+        return [nodo.dados for nodo in self]
 
     def enfileirar(self, valor):
         """
@@ -73,7 +73,7 @@ class FilaCircularEncadeada:
             print(FAIL + "ATENÇÃO!" + ENDC + " Fila Vazia! Exclusão não ocorreu.")
             return
 
-        valor = self.primeiro.valor
+        valor = self.primeiro.dados
         self.primeiro = self.primeiro.proximo
         self.ultimo.proximo = self.primeiro
         self._tamanho -= 1
@@ -95,7 +95,7 @@ class FilaCircularEncadeada:
 
         :return: Valor do primeiro elemento da fila
         """
-        return self.primeiro.valor
+        return self.primeiro.dados
 
     def ultimo_elemento(self):
         """
@@ -103,7 +103,7 @@ class FilaCircularEncadeada:
 
         :return: Valor do último elemento da fila
         """
-        return self.ultimo.valor
+        return self.ultimo.dados
 
     def __iter__(self):
         """

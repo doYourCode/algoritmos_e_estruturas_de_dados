@@ -93,8 +93,8 @@ class TabelaHashEncadeada:
         indice = self.gerar_codigo_hash(chave)
         lista = self._tabela[indice]
         for nodo in lista:
-            if nodo.valor[0] == chave:
-                return nodo.valor
+            if nodo.dados[0] == chave:
+                return nodo.dados
 
     def bucar_pelo_valor(self, valor):
         '''
@@ -105,8 +105,8 @@ class TabelaHashEncadeada:
         '''
         for lista in self._tabela:
             for nodo in lista:
-                if nodo.valor[1] == valor:
-                    return nodo.valor
+                if nodo.dados[1] == valor:
+                    return nodo.dados
 
     def deletar_dados(self, chave):
         '''

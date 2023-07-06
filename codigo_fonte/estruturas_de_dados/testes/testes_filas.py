@@ -134,7 +134,7 @@ def fila_circular_encadeada():
     fila_circular_teste.enfileirar("Ítalo")
     print(f'Primeiro elemento: {WARNING}{fila_circular_teste.primeiro_elemento()}{ENDC}\n'
           f'Último elemento: {WARNING}{fila_circular_teste.ultimo_elemento()}{ENDC}\n'
-          f'Pra quem o último elemento está apontando: {WARNING}{fila_circular_teste.ultimo.proximo.valor}{ENDC}')
+          f'Pra quem o último elemento está apontando: {WARNING}{fila_circular_teste.ultimo.proximo.dados}{ENDC}')
 
     print(f'{str(fila_circular_teste.valores)} {OKBLUE} Tamanho da Fila: {len(fila_circular_teste)}{ENDC}\n')
     # Testando a exclusão
@@ -144,7 +144,7 @@ def fila_circular_encadeada():
 
     print(f'Primeiro elemento: {WARNING}{fila_circular_teste.primeiro_elemento()}{ENDC}\n'
           f'Último elemento: {WARNING}{fila_circular_teste.ultimo_elemento()}{ENDC}\n'
-          f'Pra quem o último elemento está apontando: {WARNING}{fila_circular_teste.ultimo.proximo.valor}{ENDC}')
+          f'Pra quem o último elemento está apontando: {WARNING}{fila_circular_teste.ultimo.proximo.dados}{ENDC}')
     print(f'{str(fila_circular_teste.valores)} {OKBLUE} Tamanho da Fila: {len(fila_circular_teste)}{ENDC}\n')
 
     # Testando se está vazia
