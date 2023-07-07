@@ -1,39 +1,93 @@
 {
-  "vertices":
-  [
-    {
-      "nome": "A",
-      "pos": [16, 32],
-      "arestas":
-      [
-        { "nome": "B", "peso": 2 },
-        { "nome": "C", "peso": 5 }
-      ]
-    },
-    {
-      "nome": "B",
-      "pos": [32, 48],
-      "arestas":
-      [
-        { "nome": "A", "peso": 2 },
-        { "nome": "D", "peso": 6 }
-      ]
-    },
-    {
-      "nome": "C",
-      "pos": [32, 64],
-      "arestas":
-      [
-        { "nome": "A", "peso": 5 }
-      ]
-    },
-    {
-      "nome": "D",
-      "pos": [64, 64],
-      "arestas":
-      [
-        { "nome": "B", "peso": 6 }
-      ]
-    }
-  ]
+  "nodos":
+          [
+            {
+              "nome": "A",
+              "x": 32,
+              "y": 56
+            },
+            {
+              "nome": "B",
+              "x": 96,
+              "y": 120
+            },
+            {
+              "nome": "C",
+              "x": 132,
+              "y": 212
+            },
+            {
+              "nome": "D",
+              "x": 230,
+              "y": 250
+            },
+            {
+              "nome": "E",
+              "x": 370,
+              "y": 160
+            },
+            {
+              "nome": "F",
+              "x": 430,
+              "y": 270
+            },
+            {
+              "nome": "G",
+              "x": 310,
+              "y": 64
+            }
+          ],
+  "arestas":
+          [
+            {
+              "nodo_1": "A",
+              "nodo_2": "B",
+              "custo": 32
+            },
+            {
+              "nodo_1": "B",
+              "nodo_2": "C",
+              "custo": 17
+            },
+            {
+              "nodo_1": "C",
+              "nodo_2": "D",
+              "custo": 12
+            },
+            {
+              "nodo_1": "B",
+              "nodo_2": "D",
+              "custo": 11
+            },
+            {
+              "nodo_1": "D",
+              "nodo_2": "E",
+              "custo": 15
+            },
+            {
+              "nodo_1": "B",
+              "nodo_2": "E",
+              "custo": 27
+            },
+            {
+              "nodo_1": "B",
+              "nodo_2": "G",
+              "custo": 33
+            },
+            {
+              "nodo_1": "G",
+              "nodo_2": "E",
+              "custo": 24
+            },
+            {
+              "nodo_1": "D",
+              "nodo_2": "F",
+              "custo": 24
+            },
+            {
+              "nodo_1": "E",
+              "nodo_2": "F",
+              "custo": 24
+            }
+          ]
 }

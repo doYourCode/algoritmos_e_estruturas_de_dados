@@ -83,10 +83,10 @@ class Pintor:
                 bold=True)
 
     def ler_nodo(self, nodo: str):
-
-        n = self.grafo.nodos[nodo]
-        self.lista_nnp.remove(n)
-        self.lista_njp.append(n)
+        if self.grafo.nodos[nodo] not in self.lista_njp:
+            n = self.grafo.nodos[nodo]
+            self.lista_nnp.remove(n)
+            self.lista_njp.append(n)
 
     def ler_aresta(self, nodo1: str, nodo2: str):
 
@@ -96,5 +96,6 @@ class Pintor:
             if a.outro.nome == self.grafo.nodos[nodo2].nome:
                 _a = a
 
-        self.lista_anp.remove(_a)
-        self.lista_ajp.append(_a)
+        if _a not in self.lista_ajp:
+            self.lista_anp.remove(_a)
+            self.lista_ajp.append(_a)

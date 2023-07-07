@@ -6,7 +6,7 @@ __license__ = "GPL"
 __email__ = "caio.lamas@ifnmg.edu,br"
 
 
-from exemplos.plotagem.grafo_simples import *
+from exemplos.plotagem.plotagem_grafo_simples import *
 from codigo_fonte.utilidades.imports import *
 
 

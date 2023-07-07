@@ -1,4 +1,5 @@
 import math
+import json
 
 
 class Nodo:
@@ -16,7 +17,10 @@ class Aresta:
         self.origem = origem
         self.outro = outro
         self.custo = custo
-        self.distancia = math.sqrt(pow((origem.dados["x"] - outro.dados["x"]), 2) + pow((origem.dados["x"] - outro.dados["x"]), 2))
+        self.distancia = math.sqrt(
+            pow((origem.dados["x"] - outro.dados["x"]), 2) +
+            pow((origem.dados["x"] - outro.dados["x"]), 2)
+        )
 
 
 class GrafoListaAdjacenciaAlt:
@@ -33,3 +37,17 @@ class GrafoListaAdjacenciaAlt:
             self.nodos[outro].arestas.append(Aresta(self.nodos[outro], self.nodos[nome], custo))
 
         self.nodos[nome].arestas.append(Aresta(self.nodos[nome], self.nodos[outro], custo))
+
+    def carregar_arquivo(self, arquivo: str):
+
+        f = open(arquivo)
+
+        data = json.load(f)
+
+        for n in data["nodos"]:
+            self.adicionar_nodo(n["nome"], {"x": n["x"], "y": n["y"]})
+
+        for a in data["arestas"]:
+            self.adicionar_aresta(a["nodo_1"], a["nodo_2"], a["custo"])
+
+        f.close()
