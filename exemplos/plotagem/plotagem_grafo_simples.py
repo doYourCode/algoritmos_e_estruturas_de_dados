@@ -1,3 +1,5 @@
+from threading import Thread
+
 import arcade
 
 from codigo_fonte.estruturas_de_dados.grafo_lista_adjacencia_alt import *
@@ -17,7 +19,15 @@ def grafo_simples_main():
 
     pintor = Pintor(grafo)
 
+    # COMENTÁRIO
+    # Suponho que o erro aqui está em não utilizar uma abordagem Iterativa, como um gameloop, preciso verificar se
+    # a lib arcade tem essa funcionalidade e implementá-la, assim será possível interagir com os algoritmos de busca
+
     #busca_em_largura(grafo, pintor, "A")
+
+    #thread = Thread(target=busca_em_largura, args=(grafo, pintor, "A", 2))
+
+    #thread.start()
 
     arcade.start_render()
 
