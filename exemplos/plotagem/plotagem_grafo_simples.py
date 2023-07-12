@@ -29,7 +29,7 @@ def grafo_simples_main():
 
     #thread.start()
 
-    arcade.start_render()
+    arcade.start_render() # essa parte precisa ir pro metodo onDraw()
 
     pintor.desenha()
 
