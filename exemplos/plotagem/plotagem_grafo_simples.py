@@ -1,5 +1,3 @@
-from threading import Thread
-
 import arcade
 
 from codigo_fonte.estruturas_de_dados.grafo_lista_adjacencia_alt import *
