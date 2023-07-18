@@ -1,6 +1,8 @@
 from codigo_fonte.estruturas_de_dados.grafo_lista_adjacencia_alt import *
 from exemplos.plotagem.pintor_grafo_adj import Pintor
 
+# Precisa ser uma classe p/ guardar todos os estados
+
 
 def busca_em_largura(grafo: GrafoListaAdjacenciaAlt, pintor: Pintor, origem: str):
 
