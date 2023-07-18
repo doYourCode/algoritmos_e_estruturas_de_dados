@@ -1,13 +1,22 @@
 import arcade
 from arcade import Window
 
+from codigo_fonte.estruturas_de_dados.grafo_lista_adjacencia_alt import *
+from exemplos.plotagem.pintor_grafo_adj import Pintor
+
 
 class App(Window):
 
     def __init__(self, width, height, title):
         super().__init__(width, height, title)
 
-        arcade.set_background_color(arcade.color.AMAZON)
+        arcade.set_background_color(arcade.color.DARK_IMPERIAL_BLUE)
+
+        self.grafo = GrafoListaAdjacenciaAlt()
+
+        self.grafo.carregar_arquivo("D:/Repos/Python/algoritmos_e_estruturas_de_dados/dados/grafo_ex_01.json")
+
+        self.pintor = Pintor(self.grafo)
 
         # If you have sprite lists, you should create them here,
         # and set them to None
@@ -27,6 +36,11 @@ class App(Window):
         self.clear()
 
         # Call draw() on all your sprite lists below
+        arcade.start_render()  # essa parte precisa ir pro metodo onDraw()
+
+        self.pintor.desenha()
+
+        arcade.finish_render()
 
     def on_update(self, delta_time):
         """
@@ -69,9 +83,11 @@ class App(Window):
         """
         pass
 
+
 def main():
     """ Main function """
     game = App(1280, 720, "Plotagem de grafo")
+
     game.setup()
     arcade.run()
 

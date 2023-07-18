@@ -21,13 +21,9 @@ def grafo_simples_main():
     # Suponho que o erro aqui está em não utilizar uma abordagem Iterativa, como um gameloop, preciso verificar se
     # a lib arcade tem essa funcionalidade e implementá-la, assim será possível interagir com os algoritmos de busca
 
-    #busca_em_largura(grafo, pintor, "A")
+    busca_em_largura(grafo, pintor, "A")
 
-    #thread = Thread(target=busca_em_largura, args=(grafo, pintor, "A", 2))
-
-    #thread.start()
-
-    arcade.start_render() # essa parte precisa ir pro metodo onDraw()
+    arcade.start_render()  # essa parte precisa ir pro metodo onDraw()
 
     pintor.desenha()
 
