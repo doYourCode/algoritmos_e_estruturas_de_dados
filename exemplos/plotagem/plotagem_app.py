@@ -3,6 +3,7 @@ from arcade import Window
 
 from codigo_fonte.estruturas_de_dados.grafo_lista_adjacencia_alt import *
 from exemplos.plotagem.pintor_grafo_adj import Pintor
+from exemplos.plotagem.busca_em_largura import BuscaEmLargura
 
 
 class App(Window):
@@ -17,6 +18,8 @@ class App(Window):
         self.grafo.carregar_arquivo("D:/Repos/Python/algoritmos_e_estruturas_de_dados/dados/grafo_ex_01.json")
 
         self.pintor = Pintor(self.grafo)
+
+        self.bfs = BuscaEmLargura(self.grafo, self.pintor, "A")
 
         # If you have sprite lists, you should create them here,
         # and set them to None
@@ -48,7 +51,7 @@ class App(Window):
         Normally, you'll call update() on the sprite lists that
         need it.
         """
-        pass
+        self.bfs.atualiza()
 
     def on_key_press(self, key, key_modifiers):
         """
