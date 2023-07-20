@@ -51,7 +51,7 @@ class App(Window):
         Normally, you'll call update() on the sprite lists that
         need it.
         """
-        self.bfs.atualiza(10)
+        self.bfs.atualiza(40)
 
     def on_key_press(self, key, key_modifiers):
         """

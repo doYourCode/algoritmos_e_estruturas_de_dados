@@ -20,6 +20,8 @@ class Pintor:
 
         self.lista_njp = list()
 
+        self.aresta_prep = list()
+
         self.lista_ajp = list()
 
     def desenha(self):
@@ -43,6 +45,16 @@ class Pintor:
                 aresta.outro.dados["x"],
                 aresta.outro.dados["y"],
                 (255, 255, 255, 255),
+                2
+            )
+
+        for aresta in self.aresta_prep:
+            arcade.draw_line(
+                aresta.origem.dados["x"],
+                aresta.origem.dados["y"],
+                aresta.outro.dados["x"],
+                aresta.outro.dados["y"],
+                (128, 128, 240, 255),
                 2
             )
 
@@ -87,6 +99,18 @@ class Pintor:
             n = self.grafo.nodos[nodo]
             self.lista_nnp.remove(n)
             self.lista_njp.append(n)
+
+    def preparar_aresta(self, nodo1: str, nodo2: str):
+
+        _a = Aresta
+
+        for a in self.grafo.nodos[nodo1].arestas:
+            if a.outro.nome == self.grafo.nodos[nodo2].nome:
+                _a = a
+
+        if _a not in self.aresta_prep:
+            #self.lista_anp.remove(_a)
+            self.aresta_prep.append(_a)
 
     def ler_aresta(self, nodo1: str, nodo2: str):
 

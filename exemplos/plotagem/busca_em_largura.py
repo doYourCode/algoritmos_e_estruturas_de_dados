@@ -24,25 +24,6 @@ class BuscaEmLargura:
                 outro = self.grafo.nodos[a.outro.nome]
                 if outro.nome not in self.lista_nos_lidos:
                     self.fila.append(outro)
-                    self.pintor.ler_aresta(a.origem.nome, outro.nome)
+                    self.pintor.preparar_aresta(a.origem.nome, outro.nome)
+                #self.pintor.ler_aresta(n.nome, self.fila[0].nome)
         self.contador += 1
-
-
-def busca_em_largura(grafo: GrafoListaAdjacenciaAlt, pintor: Pintor, origem: str):
-
-    queue = []
-    read = set()
-
-    queue.append(grafo.nodos[origem])
-
-    while queue:
-
-        n = queue.pop(0)
-        read.add(n.nome)
-        pintor.ler_nodo(n.nome)
-
-        for a in n.arestas:
-            outro = grafo.nodos[a.outro.nome]
-            if outro.nome not in read:
-                queue.append(outro)
-                pintor.ler_aresta(a.origem.nome, outro.nome)
